@@ -6,3 +6,6 @@ I am a second year Master Student at MIPT, I do research at Bayes Group under su
 Dmitry Vetrov. My research is focused on Bayesian regularization of deep neural nets. At MIPT I work
 as a teacher assistant for some Machine Learning courses. Also, I am an irregular student of Yandex
 School of Data Analysis.
+
+
+[[resume/ashuha-resume.pdf]]
