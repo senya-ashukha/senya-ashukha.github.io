@@ -1,9 +1,7 @@
 ---
-layout: post-index
-permalink: /blog/
-title: All Posts
-tagline: A List of Posts
-tags: [blog]
-comments: false
+layout: page
+permalink: /projects/
+title: Projects
+tagline: A List of Projects
 ---
 
