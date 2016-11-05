@@ -10,8 +10,7 @@ owner:
   vk: ars.ashuha
   facebook: ars.ashuha
   flickr: 115219639@N03
-  telegram: ars.ashuha
-  phone: +7 965 178 29 15
+  telegram: arsashuha
 
 # google_analytics: UA-52736040-1
 # google_verify: https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
@@ -21,8 +20,8 @@ links:
     url: /
   - title: Projects
     url: /projects/
-  - title: Slides
-    url: /slides/
+  - title: Projects
+    url: /projects/
   - title: Blog
     url: /blog/
 
