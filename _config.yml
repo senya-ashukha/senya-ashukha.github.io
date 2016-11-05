@@ -1,16 +1,14 @@
 title:            Jordi Pont-Tuset's site
 description:      Welcome to my site.
 url:              https://ars-ashuha.ru
-disqus_shortname: jponttuset
 
 owner:
   name:           Ars
   avatar:         avatar_v2.png
-  bio:            I'm from a small town near Girona, Catalunya. Currently in Zürich, Switzerland. Passionate about computer vision, technology, running, and mountains.
-  email:          jponttuset@gmail.com
-  twitter: jponttuset
-  linkedin: jponttuset
-  github: jponttuset
+  bio:            123
+  email:          ars.ashuha@gmail.com
+  linkedin: ars-ashuha
+  github: ars-ashuha
 
 # google_analytics: UA-52736040-1
 # google_verify: https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
