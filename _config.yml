@@ -17,11 +17,9 @@ owner:
 
 links:
   - title: Curriculum
-    url: /cv/
-  - title: Publications
-    url: /publications/
-  - title: Code
-    url: /code/
+    url: /resume/ashuha-resume.pdf
+  - title: Projects
+    url: /projects/
   - title: Blog
     url: /blog/
 
