@@ -7,5 +7,6 @@ Dmitry Vetrov. My research is focused on Bayesian regularization of deep neural 
 as a teacher assistant for some Machine Learning courses. Also, I am an irregular student of Yandex
 School of Data Analysis.
 
+<\br>
 
-My resume is avalible [hear](resume/ashuha-resume.pdf).
+My resume is available [here](resume/ashuha-resume.pdf).
