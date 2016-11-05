@@ -4,7 +4,7 @@ url:              https://ars-ashuha.ru
 disqus_shortname: jponttuset
 
 owner:
-  name:           Jordi Pont-Tuset
+  name:           Ars
   avatar:         jordi.png
   bio:            I'm from a small town near Girona, Catalunya. Currently in Zürich, Switzerland. Passionate about computer vision, technology, running, and mountains.
   email:          jponttuset@gmail.com
@@ -33,7 +33,6 @@ markdown:    kramdown
 kramdown:
   extensions: ["strikethrough"]
   
-# https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:categories/:title/
 
 kramdown:
