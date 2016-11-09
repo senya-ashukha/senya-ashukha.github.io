@@ -5,4 +5,4 @@ title: Slides
 tagline: A List of Slides
 ---
 
-- 2016.04.01: [Deep Structured Models](slides/2016.04.01_DeepStructuredModels/deep_structured_models.pdf)
+- 2016.04.01: [Deep Structured Models](2016.04.01_DeepStructuredModels/deep_structured_models.pdf)
