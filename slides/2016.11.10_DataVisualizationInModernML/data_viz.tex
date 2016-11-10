@@ -76,11 +76,11 @@
 	Motivation 
 	\begin{itemize}
 		\item It's a little bit sad, but we can plot only 2D data, isn't it?
-		\item A goal of data visualization is to understand of inner data structure.
-		\item Or represent data in much more interpretable form.
+		\item A goal of data visualization is to understand inner data structure.
+		\item Or represent data in a much more interpretable form.
 	\end{itemize}
 	\vspace{1cm}
-	Two way to get this goal:
+	There are two way to get this goal:
 	\begin{itemize}
 		\item Low Rank Way (SVD, Auto-encoders, LDA, etc.)
 		\item Generative Models Way (GAN, Image Capturing, etc.)
@@ -90,18 +90,17 @@
 \begin{frame}{Low Rank idea}
 	\begin{itemize}
 		\item We have matrix $X_{items \times features}$
-		\item Let's try to represent each item's vector as a smaller dimension ones
+		\item Let's try to represent each item's vector as smaller ones.
 		\item What should we do? 
 	\end{itemize}
 	
-	Principal component analysis is a matrix decomposition,  minimize $L_2$ norm
+	Principal component analysis is a matrix decomposition
 	
 	\begin{center}
 		\includegraphics[scale=0.2]{img/svd}
 	\end{center}
 	
-	Intuition save maximum data variance 
-	 decomposition,  minimize $L_2$ norm
+	Intuition save maximum data variance,  minimize $L_2$ norm
 	 
 	 \begin{center}
 	 	\includegraphics[scale=0.3]{img/2} \includegraphics[scale=0.3]{img/1}
@@ -119,10 +118,10 @@
  		 \end{center}
 \end{frame}
 
-\begin{frame}{Non-linear Expansion}
+\begin{frame}{Non-linear generalization}
 	\begin{itemize}
-		\item What did we do wrong? Our picture mix different classes and so on.
-		\item Let's try non-linear generalization.
+		\item What did we do wrong? Our picture mixes different classes and so on.
+		\item Let's try nonlinear generalization.
 	\end{itemize}
 	
 	 \begin{center}
@@ -130,7 +129,7 @@
 	 \end{center}
 	
 	\begin{itemize}
-		\item How to find $W_n$? 
+		\item How to find $W_n, b_n$? 
 		\item Define loss function $L(Y, \hat{Y})$ and  use your favourite opt method.
 	\end{itemize}
 \end{frame}
@@ -207,13 +206,13 @@ The loss that is being minimized is then
 		\end{center}
 		
 	\end{itemize}
-	http://turbomaze.github.io/word2vecjson/
+	\href{http://turbomaze.github.io/word2vecjson/}{http://turbomaze.github.io/word2vecjson/}
 \end{frame}
 
 \begin{frame}{Image2Text}
 	\begin{itemize}
 		\item Ok, we have a picture and want to represent in lower dim space
-		\item lets try map picture om a word sentence space
+		\item Let's try to map picture to words sentence
 	\end{itemize}
 	\begin{center}
 		\includegraphics[scale=0.3]{img/nt}
@@ -238,15 +237,11 @@ The loss that is being minimized is then
 
 \begin{frame}{Text2Image}
 		\begin{center}
-			\includegraphics[scale=0.3]{img/t2i}
+			\includegraphics[scale=0.35]{img/t2i}
 			
 			\includegraphics[scale=0.4]{img/t2ie.png}			
 		\end{center}
-	\url{https://arxiv.org/pdf/1511.02793v2.pdf}
-\end{frame}
-
-\begin{frame}{References}
-
+	\href{https://arxiv.org/pdf/1511.02793v2.pdf}{https://arxiv.org/pdf/1511.02793v2.pdf}
 \end{frame}
 
 \end{document}
