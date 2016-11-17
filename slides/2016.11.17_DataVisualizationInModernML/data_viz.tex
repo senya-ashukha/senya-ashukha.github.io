@@ -73,134 +73,134 @@
 \end{frame}
 
 \begin{frame}{Motivation}
-	\pause  Motivation 
+	  Motivation 
 	\begin{itemize}
-		\pause \item It's a little bit sad, but we can plot only 2D data, isn't it?
-		\pause \item A goal of data visualization is to understand inner data structure.
-		\pause  \item Or represent data in a much more interpretable form.
+		 \item It's a little bit sad, but we can plot only 2D data, isn't it?
+		 \item A goal of data visualization is to understand inner data structure.
+		  \item Or represent data in a much more interpretable form.
 	\end{itemize}
 	\vspace{1cm}
-	\pause There are two way to get this goal:
+	 There are two way to get this goal:
 	\begin{itemize}
-		\pause  \item Low Rank Way (SVD, Auto-encoders, LDA, etc.)
-		\pause  \item Generative Models Way (GAN, Image Capturing, etc.)
+		  \item Low Rank Way (SVD, Auto-encoders, LDA, etc.)
+		  \item Generative Models Way (GAN, Image Capturing, etc.)
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Low Rank idea}
 	\begin{itemize}
-		\pause  \item We have matrix $X_{items \times features}$
-		\pause  \item Let's try to represent each item's vector as smaller ones.
-		\pause  \item What should we do? 
+		  \item We have matrix $X_{items \times features}$
+		  \item Let's try to represent each item's vector as smaller ones.
+		  \item What should we do? 
 	\end{itemize}
 	
-	\pause Principal component analysis is a matrix decomposition
+	 Principal component analysis is a matrix decomposition
 	
 	\begin{center}
-		\pause \includegraphics[scale=0.2]{img/svd}
+		 \includegraphics[scale=0.2]{img/svd}
 	\end{center}
 	
-	\pause Intuition save maximum data variance,  minimize $L_2$ norm
+	 Intuition save maximum data variance,  minimize $L_2$ norm
 	 
 	 \begin{center}
-	 	\pause \includegraphics[scale=0.3]{img/2} \pause \includegraphics[scale=0.3]{img/1}
+	 	 \includegraphics[scale=0.3]{img/2}  \includegraphics[scale=0.3]{img/1}
 	 \end{center}
 \end{frame}
 
 \begin{frame}{SVD:  Faces dataset}
-	\pause Main components: 
+	 Main components: 
 		 \begin{center}
-			 	\pause \includegraphics[scale=0.3]{img/face} ~~~\pause \includegraphics[scale=0.3]{img/svd_face}		 
+			 	 \includegraphics[scale=0.3]{img/face} ~~~ \includegraphics[scale=0.3]{img/svd_face}		 
 		 \end{center}
-	 \pause Plot in 2d:
+	  Plot in 2d:
  		 \begin{center}
-	  		 	\pause \includegraphics[scale=0.25]{img/mnist} ~~~\pause\includegraphics[scale=0.25]{img/svd_mnist}		 
+	  		 	 \includegraphics[scale=0.25]{img/mnist} ~~~\includegraphics[scale=0.25]{img/svd_mnist}		 
  		 \end{center}
 \end{frame}
 
 \begin{frame}{Non-linear generalization}
 	\begin{itemize}
-		\pause \item What did we do wrong? Our picture mixes different classes and so on.
-		\pause \item Let's try nonlinear generalization.
+		 \item What did we do wrong? Our picture mixes different classes and so on.
+		 \item Let's try nonlinear generalization.
 	\end{itemize}
 	
 	 \begin{center}
-	 	\pause \includegraphics[scale=0.3]{img/fcautoenc1} ~~~\pause \includegraphics[scale=0.25]{img/fcautoenc2}		 
+	 	 \includegraphics[scale=0.3]{img/fcautoenc1} ~~~ \includegraphics[scale=0.25]{img/fcautoenc2}		 
 	 \end{center}
 	
 	\begin{itemize}
-		\pause \item How to find $W_n, b_n$? 
-		\pause \item Define loss function $L(Y, \hat{Y})$ and  use your favourite opt method.
+		 \item How to find $W_n, b_n$? 
+		 \item Define loss function $L(Y, \hat{Y})$ and  use your favourite opt method.
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Auto encoders example}
 		 \begin{center}
-		 	\pause \includegraphics[scale=0.4]{img/autoenc}
+		 	 \includegraphics[scale=0.4]{img/autoenc}
 		 \end{center}
 	
-	\pause \href{http://dpkingma.com/sgvb_mnist_demo/demo.html}{http://dpkingma.com/sgvb\_mnist\_demo/demo.html}
+	 \href{http://dpkingma.com/sgvb_mnist_demo/demo.html}{http://dpkingma.com/sgvb\_mnist\_demo/demo.html}
 \end{frame}
 
 \begin{frame}{Stochastic Neighbor Embedding}
 	
-	\pause  X -- high dimensional obj and Y -- low dimensional ones, $\sigma$ -- width params
+	  X -- high dimensional obj and Y -- low dimensional ones, $\sigma$ -- width params
 	
-	$$\pause p_{j\mid i} = \frac{\exp(-\lVert\mathbf{x}_i - \mathbf{x}_j\rVert^2 / 2\sigma_i^2)}{\sum_{k \neq i} \exp(-\lVert\mathbf{x}_i - \mathbf{x}_k\rVert^2 / 2\sigma_i^2)}~~~\pause q_{j|i} = \frac{(-\lVert \mathbf{y}_i - \mathbf{y}_j\rVert^2)}{\sum_{k \neq i} (-\lVert \mathbf{y}_i - \mathbf{y}_k\rVert^2)}$$
-	\pause 
+	$$ p_{j\mid i} = \frac{\exp(-\lVert\mathbf{x}_i - \mathbf{x}_j\rVert^2 / 2\sigma_i^2)}{\sum_{k \neq i} \exp(-\lVert\mathbf{x}_i - \mathbf{x}_k\rVert^2 / 2\sigma_i^2)}~~~ q_{j|i} = \frac{(-\lVert \mathbf{y}_i - \mathbf{y}_j\rVert^2)}{\sum_{k \neq i} (-\lVert \mathbf{y}_i - \mathbf{y}_k\rVert^2)}$$
+	 
 	\vspace{-0.1cm}
 	$$KL(P||Q) = \sum_j\sum_{i} p_{i|j} \log \frac{p_{i|j}}{q_{i|j}} \rightarrow \min_q$$
 	
 	 \begin{center}
-		 	\pause \includegraphics[scale=0.4]{img/tsne_mnist}
+		 	 \includegraphics[scale=0.4]{img/tsne_mnist}
 	 \end{center}
-	\pause
+	
 	Deep Neural Nets + t-SNE (modification of SNE with Student distr): \href{http://cs.stanford.edu/people/karpathy/cnnembed/}{http://cs.stanford.edu/people/karpathy/cnnembed/}
 \end{frame}
 
 \begin{frame}{CNN}
 	 \begin{center}
-	 	\pause
+	 	
 	 	\includegraphics[scale=0.25]{img/cnn}
 	 	
-	 	\pause
+	 	
 	 	\includegraphics[scale=0.4]{img/gn}
 	 \end{center}
 \end{frame}
 
 \begin{frame}{DNN Metric Learning Triplet Loss}
-	\pause
+	
 			 \begin{center}
 			 	\includegraphics[scale=0.7]{img/ns}
 			 \end{center}
-	\pause
+	
 		 \begin{center}
 		 	\includegraphics[scale=0.7]{img/tl2}
 		 \end{center}
-\pause The loss that is being minimized is then 
+ The loss that is being minimized is then 
 	 \begin{center}
-	 	\pause \includegraphics[scale=0.4]{img/tl}
+	 	 \includegraphics[scale=0.4]{img/tl}
 	 \end{center}
 \end{frame}
 
 \begin{frame}{DNN Metric Learning Triplet Face and Music}
 		 \begin{center}
-		 	\pause\includegraphics[scale=0.5]{img/face1} \pause\includegraphics[scale=0.3]{img/music}
+		 	\includegraphics[scale=0.5]{img/face1} \includegraphics[scale=0.3]{img/music}
 		 \end{center}
 \end{frame}
 
 
 \begin{frame}{High level}
 	\begin{itemize}
-		\pause\item We have mapped each object into vector
-		\pause\item Let's train this vector for match complex object like words 		
+		\item We have mapped each object into vector
+		\item Let's train this vector for match complex object like words 		
 	\end{itemize}
 	
 	\begin{center}
-	\pause	\includegraphics[scale=0.25]{img/recurrent_nn}
+		\includegraphics[scale=0.25]{img/recurrent_nn}
 	\end{center}
 	\vspace{-0.5cm}
-	\pause
+	
 	$$h_n = \textcolor{green}{W_x} x_n + \textcolor{red}{W_h}\sigma(h_{n-1})$$
 	$$y_n = \sigma(\textcolor{notgreen}{W_y}  h_n)$$
 \end{frame}
@@ -208,53 +208,53 @@
 
 \begin{frame}{Word2Vec}
 	\begin{itemize}
-		\pause\item Shallow Neural Net
+		\item Shallow Neural Net
 				\begin{center}
 					\includegraphics[scale=0.2]{img/w2vv}
 				\end{center}
 				
-		\pause\item Operations on embeddings are great
+		\item Operations on embeddings are great
 		\begin{center}
 			\includegraphics[scale=0.5]{img/w2v}
 		\end{center}
 		
 	\end{itemize}
-	\pause\href{http://turbomaze.github.io/word2vecjson/}{http://turbomaze.github.io/word2vecjson/}
+	\href{http://turbomaze.github.io/word2vecjson/}{http://turbomaze.github.io/word2vecjson/}
 \end{frame}
 
 \begin{frame}{Image2Text}
 	\begin{itemize}
-		\pause\item Ok, we have a picture and want to represent in lower dim space
-		\pause\item Let's try to map picture to words sentence
+		\item Ok, we have a picture and want to represent in lower dim space
+		\item Let's try to map picture to words sentence
 	\end{itemize}
 	\begin{center}
-	\pause	\includegraphics[scale=0.3]{img/nt}
+		\includegraphics[scale=0.3]{img/nt}
 		
-	\pause	\includegraphics[scale=0.3]{img/ntw}
+		\includegraphics[scale=0.3]{img/ntw}
 	\end{center}
 
-	\pause\href{http://cs.stanford.edu/people/karpathy/deepimagesent/}{http://cs.stanford.edu/people/karpathy/deepimagesent/}
-	\pause\href{http://cs.stanford.edu/people/karpathy/deepimagesent/rankingdemo/}{http://cs.stanford.edu/people/karpathy/deepimagesent/rankingdemo/}
+	\href{http://cs.stanford.edu/people/karpathy/deepimagesent/}{http://cs.stanford.edu/people/karpathy/deepimagesent/}
+	\href{http://cs.stanford.edu/people/karpathy/deepimagesent/rankingdemo/}{http://cs.stanford.edu/people/karpathy/deepimagesent/rankingdemo/}
 \end{frame}
 
 \begin{frame}{Generative Adversarial Networks}
 	\begin{itemize}
-		\pause\item Image Generation is a lintel bit hardcore
-		\pause\item Most modern idea is like this
+		\item Image Generation is a lintel bit hardcore
+		\item Most modern idea is like this
 	\end{itemize}
 	\begin{center}
-		\pause\includegraphics[scale=0.3]{img/gan2}
-		\pause\includegraphics[scale=0.4]{img/gan1}
+		\includegraphics[scale=0.3]{img/gan2}
+		\includegraphics[scale=0.4]{img/gan1}
 	\end{center}
 \end{frame}
 
 \begin{frame}{Text2Image}
 		\begin{center}
-			\pause\includegraphics[scale=0.35]{img/t2i}
+			\includegraphics[scale=0.35]{img/t2i}
 			
-			\pause\includegraphics[scale=0.4]{img/t2ie.png}			
+			\includegraphics[scale=0.4]{img/t2ie.png}			
 		\end{center}
-	\pause\href{https://arxiv.org/pdf/1511.02793v2.pdf}{https://arxiv.org/pdf/1511.02793v2.pdf}
+	\href{https://arxiv.org/pdf/1511.02793v2.pdf}{https://arxiv.org/pdf/1511.02793v2.pdf}
 \end{frame}
 
 \begin{frame}{End} 
