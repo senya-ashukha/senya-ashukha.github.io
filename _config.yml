@@ -23,10 +23,8 @@ links:
     url: /slides/
   - title: Projects
     url: /projects/
-  - title: Blog
-    url: /blog/
 
-timezone:    Europe/Zurich
+timezone:    Europe/Moscow
 future:      true
 pygments:    true
 highlighter: rouge

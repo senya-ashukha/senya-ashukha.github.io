@@ -1,5 +1,6 @@
 ---
 layout: home
+title: Summary
 ---
 
 I am a second year Master Student at MIPT, I do research at Bayes Group under supervision of prof.
