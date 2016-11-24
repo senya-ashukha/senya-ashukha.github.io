@@ -1,0 +1,95 @@
+\documentclass{beamer}
+\usepackage{ dsfont }
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\setbeamersize{text margin left=10pt, text margin right=10pt} %new code
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usefonttheme{professionalfonts} % using non standard fonts for beamer
+\setbeamerfont{frametitle}{series=\bfseries}
+\usepackage{animate}
+\usepackage{movie15}
+\usepackage{breqn, bm}
+\usepackage{amsmath}
+\usepackage[skins]{tcolorbox}
+\usepackage{subcaption}
+
+\definecolor{notgreen}{RGB}{255,127,0}
+\definecolor{green}{RGB}{49,150,3}
+\setbeamerfont{headline}{size=\small}
+
+
+%----------------------------------------------------------------------------------------
+%	 Package
+%----------------------------------------------------------------------------------------
+\usepackage{color}
+\usepackage{url}
+\beamertemplatenavigationsymbolsempty
+\definecolor{cadmiumred}{rgb}{0.8, 0.8, 0.8}
+
+%----------------------------------------------------------------------------------------
+%	 Presentation settings
+%----------------------------------------------------------------------------------------
+
+\usetheme{default}
+\usecolortheme{default}
+
+\setbeamertemplate{itemize items}[triangle] 
+\setbeamertemplate{enumerate items}[default]
+ 
+\title[Variational Drop Out]{
+	MIPT Data Visualization Course\\ 
+	\vspace{1cm}
+	\textbf{\textcolor{black}{Data Visualization in Modern Machine Learning}}}
+
+\author{Ashuha Arseniy$^{1, 2}$}
+\institute[Bayesgroup, MIPT]{
+	Bayesian Research Group$^1$, MIPT$^2$\\
+	
+	\medskip
+	\includegraphics[scale=0.5]{./img/logo} \includegraphics[scale=0.12]{./img/mipt}
+	
+	\href{ars-ashuha.ru/slides}{ars-ashuha.ru/slides}}
+
+\date{\today}
+
+\newcommand{\Expect}{\mathsf{E}}
+\newcommand{\MExpect}{\mathsf{M}}
+\newcommand{\cov}{\mathsf{cov}}
+\setbeamertemplate{section in toc}[circle]
+
+\addtobeamertemplate{navigation symbols}{}{%
+	\usebeamerfont{footline}%
+	\usebeamercolor[fg]{footline}%
+	\hspace{1em}%
+	\insertframenumber/\inserttotalframenumber
+}
+
+
+\begin{document}
+\begin{frame}
+	\titlepage 
+\end{frame}
+
+\begin{frame}{Motivation}
+	  Motivation 
+\end{frame}
+
+\begin{frame}{From linear model to Neural Net}
+	\begin{itemize}
+		\item What is a binary linear classifier?
+		$$ \hat{y_i} = sign(w^t \cdot x_i + b)$$
+		\item Let's try make our model more complex
+		$$ \hat{y_i} = sign(w_2^t \cdot (w_1^t \cdot x_i + b_1) + b_2) = sign(w^t \cdot x_i + b) $$
+		so we've made no interesting
+		\item 	Hmm, let's make nonlinear transformation
+		
+		$$ \hat{y_i} = sign(w_2^t \cdot (w_1^t \cdot x_i + b_1)^2 + b_2) \neq sign(w^t \cdot x_i + b) $$
+		
+	\end{itemize}
+
+\end{frame}
+
+\end{document}
+

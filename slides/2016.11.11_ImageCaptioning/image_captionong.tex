@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{subcaption}
+\usepackage{minted}
 \usefonttheme{professionalfonts} % using non standard fonts for beamer
 \setbeamerfont{frametitle}{series=\bfseries}
 \usepackage{animate}
@@ -39,9 +40,9 @@
 \setbeamertemplate{enumerate items}[default]
  
 \title[Variational Drop Out]{
-	HSE Deep Learning\\ 
+	MSU Deep Learning Course\\ 
 	\vspace{1cm}
-	\textbf{\textcolor{black}{Image Captiononing}}}
+	\textbf{\textcolor{black}{Image Captioning}}}
 
 \author{Ashuha Arseniy$^{1, 2}$}
 \institute[Bayesgroup, MIPT]{
@@ -75,119 +76,185 @@
 \begin{frame}{Motivation}
 	
 	\begin{itemize}
-		  \item Just for fun   \href{http://cs.stanford.edu/people/karpathy/deepimagesent/rankingdemo/}{http://cs.stanford.edu/people/karpathy/deepimagesent/rankingdemo/}
+		  \item What do we want?
 		
 			\begin{center}
 				  \includegraphics[scale=0.25]{img/ic} 
 			\end{center}
+			
+			\item Applications
 		
-		  \item Medical application
+		\begin{figure}[htbp]
+			\centering
+			\begin{subfigure}[b]{0.25\textwidth}
+				
+				\includegraphics[width=\textwidth]{img/wr}
+				
+				\caption{Your's example}
+			\end{subfigure}
+			\begin{subfigure}[b]{0.25\textwidth}
+				\includegraphics[width=\textwidth]{img/mic}
+				\caption{Medicine}
+			\end{subfigure}
+			\begin{subfigure}[b]{0.25\textwidth}
+				\includegraphics[width=\textwidth]{img/baby}
+				\caption{Search engine}
+			\end{subfigure}
+
+		\end{figure}
+			
+			\href{http://cs.stanford.edu/people/karpathy/deepimagesent/rankingdemo/}{http://cs.stanford.edu/people/karpathy/deepimagesent/rankingdemo/}
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Recurrent Nets Recap}
+	\begin{itemize}
+		\item We want to process a number of inputs, each item is a sequence 
 		
+		\begin{center}
+			\includegraphics[scale=0.13]{img/emb}~~
+			\includegraphics[scale=0.11]{img/rec}
+		\end{center}
+		
+		\item We will add recurrent connections and memory control options
+		\begin{center}
+			\includegraphics[scale=0.13]{img/rec2}
+			\includegraphics[scale=0.1]{img/lstm}
+		\end{center}
+	\item \texttt{lasagne.layers.EmbeddingLayer, lasagne.layers.LSTMLayer}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Text Generative Model}
+	\begin{itemize}
+		\item What is a text generative model?
+			$$p(w_{n+1}|w_1, \dots, w_n; \theta)$$
+		\item Let's specify dimensions:
+		\begin{itemize}
+			\item[$-$] $p(w_{n+1}).shape$  is vocabulary size
+			\item[$-$] $w_i.shape$ is embedding size
+			\item[$-$]  $\theta.shape$ has shape like parameters
+		\end{itemize}
+		\item How can we define this function? RNN!
+		$$p(w_{n+1}|w_1, \dots, w_n; \theta) = p(w_{n+1}|w_n, hiden_{n-1}; \theta)$$
+	\end{itemize}
+	 	\begin{tcolorbox}[enhanced,size=fbox,fontupper=\large\bfseries, colback=black!80, colframe=black!80]
+	 		\begin{center}
+	 			\text{\textcolor{white}{But, there are several technical problems to apply it}}
+	 		\end{center}
+	 	\end{tcolorbox}
+	 	\begin{itemize}
+	 		\item How would you to construct a batch?
+	 		\item How to define loss functions?
+	 		\item How to calculate soft-max over millions point? ()
+	 	\end{itemize}
+\end{frame}
+
+\begin{frame}{Tech Details and General Scheme}
+	\begin{center}
+			\onslide<1>{\centering\includegraphics[scale=0.5]{img/gensch}}
+			
+			\vspace{-6cm}\onslide<2>{\centering\includegraphics[scale=0.5]{img/senschb}}
+			
+			\vspace{-7cm} \onslide<3>{\centering\includegraphics[scale=0.5]{img/genschmask}}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Convolution Net Recap}
+	\begin{itemize}
+		\item Convolution (lower number of parameters cw fully connected)  
+		\item Convolution and Convolution Neural Net
+				\begin{center}
+					\includegraphics[scale=0.13]{img/cnn2}~~
+					\includegraphics[scale=0.31]{img/cnn5}
+				\end{center}
+		
+		\item Morned Architecture (VGG16)
+				\begin{center}
+					\includegraphics[scale=0.4]{img/cnn3}
+				\end{center}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Condition Text Generative Model}
+	\begin{itemize}
+		\item How to build image captioning Neural Nets?
 			\begin{center}
-				  \includegraphics[scale=0.15]{img/mic}~~~
-				  \includegraphics[scale=0.3]{img/mic2}  
+				\includegraphics[scale=0.1]{img/googlernncnn.png}
 			\end{center}
+		\item Another useful thinks?
+					\begin{center}
+						\includegraphics[scale=0.17]{img/im2txt}
+					\end{center}
 	\end{itemize}
-
-\end{frame}
-
-\begin{frame}{What should we do?}
-	\begin{itemize}
-		  \item We want to make image captioning
-		  \item Make image description
-		
-			\begin{center}
-				  \includegraphics[scale=0.25]{img/gn}
-			\end{center}
-		
-		  \item Make words description 
-			\begin{center}
-				  \includegraphics[scale=0.15]{img/rec}
-			\end{center}
-		  \item Generative Model
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Convolution Neural Nets}
-	\begin{itemize}
-		  \item We want to make image captioning
-		  \item Make image description
-		
-		\begin{center}
-			  \includegraphics[scale=0.25]{img/gn}
-		\end{center}
-		
-		  \item Make words description 
-		\begin{center}
-			  \includegraphics[scale=0.15]{img/cnn}
-		\end{center}
-		  \item Generative Model
-	\end{itemize}
-\end{frame}
-
-
-\begin{frame}{Recurrent Neural Nets}
-	\begin{itemize}
-		  \item Conception
-		
-		\begin{center}
-			  \includegraphics[scale=0.3]{img/recurent}
-		\end{center}
-		
-		  \item LSTM
-		\begin{center}
-			  \includegraphics[scale=0.15]{img/lstm}
-		\end{center}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Recurrent Neural Nets}
-	\begin{itemize}
-		  \item LSTM
-		
-		\begin{center}
-			  \includegraphics[scale=0.15]{img/lstm2}
-		\end{center}
-		
-		  \item Embeding
-		\begin{center}
-			  \includegraphics[scale=0.15]{img/text_repr.png}
-		\end{center}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Image Captioning}
 	
-	\begin{itemize}
-		  \item Captioning
-		
-		\begin{center}
-			  \includegraphics[scale=0.25]{img/ic2}  ~~~~\includegraphics[scale=0.7]{img/ic3}
-		\end{center}
-		
-		  \item Captioning?
-			\begin{center}
-				  \includegraphics[scale=0.2]{img/icc}
-			\end{center}
-	\end{itemize}
-	  \href{http://cs.stanford.edu/people/karpathy/cvpr2015.pdf}{http://cs.stanford.edu/people/karpathy/cvpr2015.pdf}
+		 	\begin{tcolorbox}[enhanced,size=fbox,fontupper=\large\bfseries, colback=black!80, colframe=black!80]
+		 		\begin{center}
+		 			\text{\textcolor{white}{But, extremely complex to train}}
+		 		\end{center}
+		 	\end{tcolorbox}
+
+	
+	\href{http://cs.stanford.edu/people/karpathy/cvpr2015.pdf}{http://cs.stanford.edu/people/karpathy/cvpr2015.pdf}
 \end{frame}
 
-\begin{frame}{Image Captioning}
+\begin{frame}[fragile]{Code should be like this}
+\begin{minted}{python}
+sentences = T.imatrix()# word ids
+image_vec = T.matrix() # image features
+sentence_mask = T.neq(sentences, PAD_ix)
+\end{minted}
+\begin{minted}{python}
+words = InputLayer((None, None), sentences)
+masks = InputLayer((None, None), sentence_mask)
+words_emb = EmbeddingLayer(words, n_tokens, EMBED_SIZE)
+\end{minted}
+\begin{minted}{python}
+image_fea = InputLayer((None, CNN_FEATURE_SIZE), image_vec)
+image_emb = DropoutLayer(image_fea, 0.5)
+image_emb = DenseLayer(image_emb, LSTM_UNITS)
+\end{minted}
+\begin{minted}{python}
+decoder = LSTMLayer(
+	words_emb, num_units=LSTM_UNITS,
+	cell_init=image_emb, mask_input=mask)
+\end{minted}
+\begin{minted}{python}
+decoder = Reshape (...)
+loss = categorical_cross_enrtopy (...)
+\end{minted}
+\end{frame}
+
+\begin{frame}{AWS Educate}
+	\begin{itemize}
+		\item Training is extremely hard, so you should use pre-train models
+		\item If it's still hard, let's use gpu
+				\begin{center}
+					\includegraphics[scale=0.3]{img/tesla}
+				\end{center}
+		\item But gpu is a little bit expensive
+		\item AWS Educate give 100\$ grand for all MSU students $\approx$ 160 hours
+		\item You need only MSU email
+		\item You can rent GPU server on Amazon WS free using this money!!!
+	\end{itemize}
+	\href{https://aws.amazon.com/ru/education/awseducate/}{https://aws.amazon.com/ru/education/awseducate/}
+\end{frame}
+
+\begin{frame}{Go To Break}
+		\begin{center}
+			\includegraphics[scale=0.25]{img/cof.png}
+		\end{center}
+\end{frame}
+
+
+\begin{frame}{Image Captioning Seminar}
 	
 	\begin{center}
-				  \includegraphics[scale=0.7]{img/ic3}
+				  \includegraphics[scale=1.0]{img/ic3}
 				
 				  \href{http://mybinder.org/repo/ars-ashuha/caption_binder}{\textcolor{red}{http://mybinder.org/repo/ars-ashuha/caption\_binder}}
 	\end{center}
-	
-
-
 \end{frame}
-
-
-
-
-
 \end{document}
 
