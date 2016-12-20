@@ -9,4 +9,4 @@ as a teacher assistant for some Machine Learning courses. Also, I am an irregula
 School of Data Analysis.
 
 <br />
-My resume is available [here](resume/ashuha-resume.pdf).
+My resume is available [here](resume/ashukha-resume.pdf).
