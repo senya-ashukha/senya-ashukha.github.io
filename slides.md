@@ -6,7 +6,7 @@ tagline: A List of Slides
 ---
 
 ### 2017
-- non
+- nan
 
 ### 2016 
 - 2016.12.04 at DMIA on [Intoduction to RNN](2016.12.04_DMIA_RNN/dmia_rnn.pdf) [video](https://youtu.be/i-l9x09kqZ8)
