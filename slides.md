@@ -4,8 +4,8 @@ permalink: /slides/
 title: Slides
 tagline: A List of Slides
 ---
-- 2016.12.04 at DMIA on [Intoduction to RNN](2016.12.04_DMIA_RNN/dmia_rnn.pdf)
-- 2016.11.28 at DMIA on [Intoduction to DL](2016.11.28_DMIA_DL/dmia_dl.pdf)
+- 2016.12.04 at DMIA on [Intoduction to RNN](2016.12.04_DMIA_RNN/dmia_rnn.pdf) [video](https://youtu.be/i-l9x09kqZ8)
+- 2016.11.28 at DMIA on [Intoduction to DL](2016.11.28_DMIA_DL/dmia_dl.pdf) [video](https://youtu.be/xguvCaSGWQY)
 - 2016.11.17 at MIPT on [Data Visualization In Modern ML](2016.11.17_DataVisualizationInModernML/data_viz.pdf)
 - 2016.11.11 at HSE  on [Image Captionong](2016.11.11_ImageCaptioning/image_captionong.pdf)
 - 2016.09.08 at Meeting with prof. Lampert on [Variational DropOut](2016.09.08_VDLtoLampert/variation_deep_learning.pdf)
