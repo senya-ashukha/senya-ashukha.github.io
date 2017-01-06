@@ -9,7 +9,7 @@ tagline: A List of Slides
 - nan
 
 ### 2016 
-- 12.30 at HSE on [Learning Structured Sparsity in Deep Neural Networks](2016.12.27_SSL/ssl.pdf)
+- 12.30 at HSE on [Learning Structured Sparsity in DNNs](2016.12.27_SSL/ssl.pdf)
 - 12.04 at DMIA on [Intoduction to RNN](2016.12.04_DMIA_RNN/dmia_rnn.pdf) [video](https://youtu.be/i-l9x09kqZ8)
 - 11.28 at DMIA on [Intoduction to DL](2016.11.28_DMIA_DL/dmia_dl.pdf) [video](https://youtu.be/xguvCaSGWQY)
 - 11.17 at MIPT on [Data Visualization In Modern ML](2016.11.17_DataVisualizationInModernML/data_viz.pdf)
