@@ -10,7 +10,7 @@ tagline: A List of Projects
 [paper](https://arxiv.org/abs/1701.05369) (arXiv)
 
 ### 2016 
-- Dropout-based Automatic Relevance Determination for Linear Models
+- Dropout-based Automatic Relevance Determination
 [code](https://github.com/DMolchanovSk/vd-ard-bdl16) 
 [paper](http://bayesiandeeplearning.org/papers/BDL_18.pdf) 
 [poster](https://ars-ashuha.ru/pdf/nips16_vdo/nips_poster.pdf) (NIPS WS)
