@@ -6,7 +6,6 @@ tagline: A List of Slides
 ---
 
 ### 2017
-- nan
 
 ### 2016 
 - 12.30 at HSE on [Learning Structured Sparsity in DNNs](2016.12.27_SSL/ssl.pdf)
