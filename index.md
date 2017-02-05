@@ -10,5 +10,5 @@ My resume is available [here](resume/ashukha-resume.pdf).
 <br />
 <br />
 
-### News 
+## News 
 - 19 Jan 2017: We have released preprint on **Variational Dropout Sparsifies Deep Neural Nets**  [arXiv](https://arxiv.org/abs/1701.05369), I would be happy to discuss it.
