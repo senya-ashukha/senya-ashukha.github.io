@@ -7,8 +7,6 @@ I am a second year Master Student at MIPT also I do research at Bayes Group unde
 
 <br />
 My resume is available [here](resume/ashukha-resume.pdf).
-<br />
-<br />
 
 ## News 
 - 19 Jan 2017: We have released preprint on **Variational Dropout Sparsifies Deep Neural Nets**  [arXiv](https://arxiv.org/abs/1701.05369), I would be happy to discuss it.
