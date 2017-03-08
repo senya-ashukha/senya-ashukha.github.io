@@ -6,6 +6,7 @@ tagline: A List of Slides
 ---
 
 ### 2017
+- 07.03 at Yandex on [Variational Dropout Sparsifies DNNs](https://goo.gl/fH3WcO)
 
 ### 2016 
 - 12.30 at HSE on [Learning Structured Sparsity in DNNs](2016.12.27_SSL/ssl.pdf)
