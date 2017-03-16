@@ -7,16 +7,16 @@ tagline: A List of Projects
 
 ### 2017 
 *  **Variational Dropout Sparsifies Deep Neural Nets**  
-[paper](https://arxiv.org/abs/1701.05369) (arXiv)
+	[paper](https://arxiv.org/abs/1701.05369) (arXiv)
+	[code](https://github.com/ars-ashuha/variational-dropout-sparsifies-dnn)
 
 ### 2016 
 
 *  **Dropout-based Automatic Relevance Determination**  
-	[code](https://github.com/DMolchanovSk/vd-ard-bdl16) 
 	[paper](http://bayesiandeeplearning.org/papers/BDL_18.pdf) 
+	[code](https://github.com/DMolchanovSk/vd-ard-bdl16) 
 	[poster](https://ars-ashuha.ru/pdf/nips16_vdo/nips_poster.pdf) (NIPS Workshop)
 * **Bigram Anchor Words Topic Model**  
-[code](https://github.com/ars-ashuha/bigram-anchor-words) 
-[paper](https://github.com/ars-ashuha/bigram-anchor-words/blob/master/bigram-anchor-words.pdf) (AIST)
-
-
+	[paper](https://github.com/ars-ashuha/bigram-anchor-words/blob/master/bigram-anchor-words.pdf) (AIST)
+	[code](https://github.com/ars-ashuha/bigram-anchor-words) 
+	[slides](https://github.com/ars-ashuha/bigram-anchor-words/blob/master/docs/pres/aist16_pres.pdf)
