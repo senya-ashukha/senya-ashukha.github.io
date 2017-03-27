@@ -10,4 +10,4 @@ My resume is available [here](resume/ashukha-resume.pdf).
 
 ## News 
 - I joined [HSE Bayesian Deep Learning Lab](https://cs.hse.ru/en/big-data/bayeslab).
-- We have released preprint on [Variational Dropout Sparsifies DNNs](https://arxiv.org/abs/1701.05369), I would be happy to discuss it. Code is avalible on [github](https://github.com/ars-ashuha/variational-dropout-sparsifies-dnn).
+- We released preprint on [Variational Dropout Sparsifies DNNs](https://arxiv.org/abs/1701.05369), [github](https://github.com/ars-ashuha/variational-dropout-sparsifies-dnn).
