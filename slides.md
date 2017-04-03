@@ -6,6 +6,7 @@ tagline: A List of Slides
 ---
 
 ### 2017
+- 31.03 at BMML on [Variational Dropout Sparsifies DNNs](https://goo.gl/RozONc)
 - 07.03 at Yandex on [Variational Dropout Sparsifies DNNs](https://goo.gl/fH3WcO)
 
 ### 2016 
