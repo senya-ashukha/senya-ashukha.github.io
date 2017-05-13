@@ -9,7 +9,7 @@ tagline: A List of Projects
 *  **Variational Dropout Sparsifies Deep Neural Nets**  
 	[paper](https://arxiv.org/abs/1701.05369)
 	[code](https://github.com/ars-ashuha/variational-dropout-sparsifies-dnn)
-	(Under review by the ICML 2017)
+	(Proceedings of the 34th ICML 2017, Sydney)
 
 ### 2016 
 
