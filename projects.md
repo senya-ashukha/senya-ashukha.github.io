@@ -7,9 +7,9 @@ tagline: A List of Projects
 
 ### 2017 
 *  **Variational Dropout Sparsifies Deep Neural Nets**  
-[paper](https://arxiv.org/abs/1701.05369)
-[code](https://github.com/ars-ashuha/variational-dropout-sparsifies-dnn)
 	Proceedings of the 34th ICML, Sydney, 2017.
+	[paper](https://arxiv.org/abs/1701.05369)
+	[code](https://github.com/ars-ashuha/variational-dropout-sparsifies-dnn)
 
 ### 2016 
 
@@ -19,7 +19,8 @@ tagline: A List of Projects
 	[poster](https://ars-ashuha.ru/pdf/nips16_vdo/nips_poster.pdf) 
 	(NIPS Workshop)
 * **Bigram Anchor Words Topic Model**  
+	AIST
 	[paper](https://github.com/ars-ashuha/bigram-anchor-words/blob/master/bigram-anchor-words.pdf) 
 	[code](https://github.com/ars-ashuha/bigram-anchor-words) 
 	[slides](https://github.com/ars-ashuha/bigram-anchor-words/blob/master/docs/pres/aist16_pres.pdf)
-	(AIST)
+	
