@@ -7,7 +7,7 @@ tagline: A List of Projects
 
 ### 2017 
 * **Structured Bayesian Pruning via Log-Normal Multiplicative Noise**
-	Under review by the ICML 2017 ([paper](https://arxiv.org/abs/1705.07283))
+	Under review by the NIPS 2017 ([paper](https://arxiv.org/abs/1705.07283))
 	
 *  **Variational Dropout Sparsifies Deep Neural Nets**  
 	Proceedings of the 34th ICML, Sydney ([paper](https://arxiv.org/abs/1701.05369), [code](https://github.com/ars-ashuha/variational-dropout-sparsifies-dnn))
