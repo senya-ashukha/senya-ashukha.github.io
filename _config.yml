@@ -14,10 +14,7 @@ owner:
   email:          ars.ashuha@gmail.com
   flickr: 115219639@N03
   
-  
-
-# google_analytics: UA-52736040-1
-# google_verify: https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+google_analytics: UA-102973164-1
 
 links:
   - title: Home
