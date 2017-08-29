@@ -4,7 +4,9 @@ title: Summary
 ---
 
 I'm a research assistant at International Laboratory of Deep Learning and Bayesian Methods. 
-Also, I teach Scientific ML Seminar at HSE and SDA.
+At HSE and YSDA I teach Scientific ML Seminar. 
+My research is focused on Bayesian regularization of deep neural nets. 
+To see the publication list visit my scholar profile.
 
 <br />
 My resume is available [here](resume/ashukha-resume.pdf).
