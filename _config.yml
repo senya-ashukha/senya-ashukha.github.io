@@ -21,8 +21,6 @@ links:
     url: /
   - title: Slides
     url: /slides/
-  - title: Projects
-    url: /projects/
 
 timezone:    Europe/Moscow
 future:      true
