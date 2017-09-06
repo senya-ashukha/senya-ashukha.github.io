@@ -5,7 +5,7 @@ title: Summary
 
 I'm getting PhD at University of Amsterdam jointly with Yandex Research, focused on Bayesian Deep Learning by supervision of Dmitry Vetrov and Max Welling.
 Also, I teach several scientific seminars on Machine Learning and involved in research at HSE. 
-My publications are available at [Google Scholar](resume/https://scholar.google.com/citations?user=IU-kuP8AAAAJ&hl=en).
+My publications are available at [Google Scholar](https://scholar.google.com/citations?user=IU-kuP8AAAAJ&hl=en).
 
 <br />
 My resume is available [here](resume/ashukha-resume.pdf).
