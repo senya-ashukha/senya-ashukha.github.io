@@ -36,21 +36,18 @@
 \setbeamertemplate{itemize items}[triangle] 
 \setbeamertemplate{enumerate items}[default]
  
-\title[ML in Music]{
-	Summer school: GoTo \\ 
+\title[ML for Music]{
+	Scientific Research Seminar at HSE \\ 
 	\vspace{1cm}
-	\textbf{\textcolor{black}{Application of Modern Machine Learning in Music  }}}
+	\textbf{\textcolor{black}{Modern Machine Learning for Music  Data}}}
 
-\author{Ashuha Arseniy}
-\institute[MIPT]{
-	Yandex, Moscow Institute of Physics and Technology\\
+\author{Arsenii Ashuha}
+\institute[HSE]{
+	HSE, \href{bayesgroup.ru}{\textcolor{blue}{bayesgroup.ru}},\\
 	
 	\medskip
 	
-	\textbf{mail}: \href{mailto:ars.ashuha@gmail.com}{\textcolor{blue}{\nolinkurl{ars.ashuha@gmail.com}}}, \textbf{slides}: \href{https://github.com/ars-ashuha/slides}{\textcolor{blue}{https://github.com/ars-ashuha/slides}}
-	
-		\includegraphics[scale=0.2]{img/goto}
-		
+	\textbf{mail}: \href{mailto:ars.ashuha@gmail.com}{\textcolor{blue}{\nolinkurl{ars.ashuha@gmail.com}}}, \textbf{slides}: \href{https://github.com/ars-ashuha/slides}{\textcolor{blue}{https://github.com/ars-ashuha/slides}}		
 }
 	
 
@@ -67,45 +64,17 @@
 	\titlepage 
 \end{frame}
 
-\begin{frame}{Who am I, and why I'm standing here?} 
-	\begin{itemize}
-		\item Education
-		\begin{center}
-			\includegraphics[scale=0.01]{img/bmstu} ~~~~ \includegraphics[scale=0.2]{img/mipt} ~~~~ \includegraphics[scale=0.2]{img/shad} 		
-			\begin{enumerate}
-				\item Bachelor Degree at Bauman University 
-				\item Master Degree at MIPT University (in progress)
-				\item Additional Education at YDS as irregular student (in progress)
-			\end{enumerate}	 
-		\end{center}
-		
-		\vspace{0.5cm}
-			
-		\item Work 
-		\begin{center}
-			\includegraphics[scale=0.1]{img/ramblerco} ~~~~ \includegraphics[scale=0.2]{img/yandex_music} ~~~~ \includegraphics[scale=0.2]{img/fivt} 	
-			\begin{enumerate}
-				\item Data Scientist (2.5 year)  -- Rambler, ML Group
-				\item Deep Learning Intern -- Yandex, Music Group  (in progress)
-				\item TA at ML practical course -- MIPT, Department of IHT  (in progress)
-			\end{enumerate}	 		
-		\end{center}
-		
-		
-	\end{itemize}
-\end{frame}
-
 \begin{frame}{How to apply ML for Music Data to get Money?} 
 	\begin{itemize}
 		\item Your are working in a big music service as a data scientist
 		\begin{center}		  
-		\includegraphics[scale=0.15]{img/interface}~~~\includegraphics[scale=0.044]{img/phone}
+		 \includegraphics[scale=0.15]{img/interface}~~~\includegraphics[scale=0.044]{img/phone}
 		\end{center}
-		\item In this service there's a lot of music data -- mp3 files
+		 \item In this service there's a lot of music data -- mp3 files
 			\begin{center}
 			\includegraphics[scale=0.4]{img/u2t}~~~~\includegraphics[scale=0.4]{img/t2f} 
 			\end{center}
-		\item You were given the task -- make money using this data
+		 \item You were given the task -- make money using this data
 	\end{itemize}
 \end{frame}
 
@@ -127,16 +96,12 @@
 	\begin{itemize}
 		\item How to find similar tracks using ML methods?
 			\begin{center}		  
-				\textcolor{blue}{Data}: 30 sec * 16000 features, $10^7$ items
+				 \textcolor{blue}{Data}: 30 sec * 16000 features, $10^7$ items
 				
-				\textcolor{red}{Task}: define function of $similarity(track_i, track_j)$
+				 \textcolor{red}{Task}: define function of $similarity(track_i, track_j)$
 			\end{center}
 		
-		\item  Why ordinary methods are so bad?
-			\begin{itemize}
-				\item shift and noise tolerance, over-fitting 
-			\end{itemize}
-		
+		 \item  Ordinary methods are bad: shift and noise tolerance, over-fitting 
 		\item Metric approach is still good idea, if we have a high level description
 		\item Good representation of music track
 		\begin{itemize}
@@ -145,7 +110,7 @@
 		\end{itemize}
 		
 			\begin{center}
-				\includegraphics[scale=0.2]{img/geners}
+				\includegraphics[scale=0.25]{img/geners}
 			\end{center}
 		
 	\end{itemize}
@@ -160,32 +125,32 @@
 	\end{center}
 	
 	\begin{tcolorbox}[colback=gray!2, colframe=red!90, title=Problem]
-		\centering We need to get picture!
+		\centering We need to have picture!
 	\end{tcolorbox}
 \end{frame}
 
 \begin{frame}{What is the sound part 2?} 
-	We have some wave 
+	 We have some wave 
 	
 		\begin{center}
 			\includegraphics[scale=0.1]{img/wave1}
 		\end{center}
 		
-	represent wave as a sum of two waves 
+	 represent wave as a sum of two waves 
 	
 		\begin{center}
 			\includegraphics[scale=0.1]{img/wave2}
 			\includegraphics[scale=0.1]{img/wave3}
 		\end{center}
 	
-	sound is a combination of big waves range
+	 sound is a combination of big wave range
 	
 		\begin{center}
 			\includegraphics[scale=0.4]{img/sound_}
 		\end{center}
 	
 	\begin{center}
-		What we lost in our representation?
+		 What we lost in our representation?
 	\end{center}	
 \end{frame}
 
@@ -210,6 +175,7 @@
 
 		\includegraphics[scale=0.4]{img/cnn_what2predict}~~~~~~~~~
 
+		
 		\begin{itemize}
 			\item genre classification
 			\item artist classification
@@ -224,6 +190,7 @@
 		\begin{center}
 			\includegraphics[scale=0.5]{img/fc}
 		\end{center}
+		
 		\begin{itemize}
 			\item too many parameters -- number of weights = $16^4 * neurons$ + ... 
 			\item It doesn't work =( 
@@ -231,14 +198,19 @@
 \end{frame}
 
 \begin{frame}{Convolution NN} 
-		Let's invent some convolution architecture
+		Is it good for our problem?
 		\begin{center}
-			\includegraphics[scale=0.5]{img/conv}
+			\includegraphics[scale=0.8]{img/conv}
 		\end{center}
-		important detail -- pooling of time axis \href{http://bit.ly/1slJTgi}{[\textcolor{green}{Spotify )))} Deep Learning]}
-		\begin{center}				
-			\includegraphics[scale=1.5]{img/rconv}
-		\end{center}
+\end{frame}
+
+\begin{frame}{Convolution NN} 
+	1D Convolutions 
+	\begin{center}				
+		\includegraphics[scale=2]{img/rconv}
+	\end{center}
+
+important detail -- pooling of time axis \href{http://bit.ly/1slJTgi}{[\textcolor{green}{Spotify )))} Deep Learning]}
 \end{frame}
 
 \begin{frame}{General scheme, what did we do?} 	
@@ -256,6 +228,7 @@
 	\end{itemize}
 	
 	Let's invent the metrics:
+	
 		\begin{itemize}
 			\item by hand
 			\item using assessors
@@ -272,7 +245,6 @@
 				\begin{center}				
 					\includegraphics[scale=0.25]{img/rnn}
 				\end{center} 
-			\item Whatever?
 		\end{enumerate}
 	How to take account?:
 		\begin{enumerate}
@@ -280,29 +252,31 @@
 				\begin{center}
 					Concat(TextRNN, Conv) $\rightarrow$ FC $\rightarrow$ Cost
 				\end{center}
-			\item Genre, Artist, Year -- embedding too, multi-cost task
-			\item ....
+			 \item Genre, Artist, Year -- embedding too, multi-cost task
 		\end{enumerate}
 \end{frame}
 
 \begin{frame}{Technical details} 
-	How to build fast system for million users?
+	 How to build fast system for million users?
 	\begin{enumerate}
-		\item pre-compute vectors and tracks simulation 
-		\item fast key-value storage
+		  \item pre-compute vectors and tracks simulation 
+		  \item fast key-value storage
 	\end{enumerate}
-		\begin{center}				
+		 \begin{center}				
 			\includegraphics[scale=0.35]{img/prod}
 		\end{center}
 \end{frame}
 	
 \begin{frame}{End} 
+	\begin{itemize}
+		\item Blog post: http://benanne.github.io/2014/08/05/spotify-cnns.html
+		\item NIPS paper: https://papers.nips.cc/paper/5004-deep-content-based-music-recommendation 
+	\end{itemize}
+	 
 	\begin{center}				
-		\includegraphics[scale=0.35]{img/csf}
+		\includegraphics[scale=0.3]{img/csf}
 	
 		{\huge Current Status of your Field!}
-		
-		Thanks for your attention!
 	\end{center}
 \end{frame}
 
