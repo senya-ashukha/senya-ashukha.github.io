@@ -17,12 +17,6 @@ owner:
   
 google_analytics: UA-102973164-1
 
-links:
-  - title: Home
-    url: /
-  - title: Slides
-    url: /slides/
-
 timezone:    Europe/Moscow
 future:      true
 pygments:    true
