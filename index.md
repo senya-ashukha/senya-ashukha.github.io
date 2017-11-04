@@ -5,15 +5,14 @@ title: Summary
 
 I'm getting PhD at University of Amsterdam jointly with Yandex Research, focused on Bayesian Deep Learning by supervision of Dmitry Vetrov and Max Welling.
 Also, I teach several scientific seminars on Machine Learning and involved in research at HSE. 
-My publications are available at [Google Scholar](https://scholar.google.com/citations?user=IU-kuP8AAAAJ&hl=en).
 
 <br />
-My resume is available [here](resume/ashukha-resume.pdf).
+My publication list is available at [Google Scholar](https://scholar.google.com/citations?user=IU-kuP8AAAAJ&hl=en), resume is available [here](resume/ashukha-resume.pdf).
  
 ## News 
-- Our [Structured Bayesian Pruning via Log-Normal Multiplicative Noise](https://arxiv.org/abs/1705.07283) paper was accepted to NIPS’17.
+- Our StructuredBP via Log-Normal Multiplicative Noise [paper](https://arxiv.org/abs/1705.07283) was accepted to NIPS’17.
 - I joined [AMLab at University of Amsterdam](http://amlab.science.uva.nl/people/) and [Yandex Research](https://research.yandex.com/). 
-- We released preprint on [Structured Bayesian Pruning via Log-Normal Multiplicative Noise](https://arxiv.org/abs/1705.07283).
-- Our [Variational Dropout Sparsifies DNNs](https://arxiv.org/abs/1701.05369) paper was accepted to ICML’17 ([github](https://github.com/ars-ashuha/variational-dropout-sparsifies-dnn), [slides](https://goo.gl/GZk5FF), [poster](http://ars-ashuha.ru/pdf/vdsdnn/svdo-poster.pdf)).
-- I joined [HSE Bayesian Deep Learning Lab](https://cs.hse.ru/en/big-data/bayeslab), here is my [hse home page](https://www.hse.ru/en/org/persons/204848606).
-- We released preprint on [Variational Dropout Sparsifies DNNs](https://arxiv.org/abs/1701.05369).
+- We released [preprint](https://arxiv.org/abs/1705.07283) on Structured Bayesian Pruning via Log-Normal Multiplicative Noise.
+- Our Variational Dropout Sparsifies DNNs [paper](https://arxiv.org/abs/1701.05369) was accepted to ICML’17 ([github](https://github.com/ars-ashuha/variational-dropout-sparsifies-dnn)).
+- I joined [HSE Bayesian Deep Learning Lab](https://cs.hse.ru/en/big-data/bayeslab), here is my hse home [page](https://www.hse.ru/en/org/persons/204848606).
+- We released [preprint](https://arxiv.org/abs/1701.05369) on Variational Dropout Sparsifies DNNs.
