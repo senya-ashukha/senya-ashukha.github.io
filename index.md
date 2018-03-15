@@ -7,7 +7,7 @@ I'm getting PhD at University of Amsterdam and BayesGroup, focused on Bayesian D
 Also, I teach several scientific seminars on Machine Learning and involved in research at HSE. 
 
 <br />
-My resume resume is available [here](resume/ashukha-resume.pdf).
+My resume resume is available [here](https://docs.google.com/document/d/1s7wPBTrbM4LNM9elzAjepc5RLGLobmzAiVVUy1kxDTU/edit?usp=sharing).
  
 ## News 
 - I quit Yandex, to pay more attention to my PhD
