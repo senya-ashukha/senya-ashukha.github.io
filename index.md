@@ -10,6 +10,7 @@ Also, I teach several scientific seminars on Machine Learning and involved in re
 My resume resume is available [here](https://docs.google.com/document/d/1s7wPBTrbM4LNM9elzAjepc5RLGLobmzAiVVUy1kxDTU/edit?usp=sharing).
  
 ## News 
+- I joined Samsung AI Research at Moscow.
 - Two papers [Uncertainty Estimation via Stochastic Batch Normalization](https://openreview.net/forum?id=r1yXEdkvz), [Bayesian Incremental Learning for Deep Neural Networks](https://openreview.net/forum?id=ByZzFPJDG) have been accepted to ICLR Workshop 2018!
 - I quit Yandex, to pay more attention to my PhD
 - We released [preprint](https://arxiv.org/abs/1803.03764) on Variance Networks: When Expectation Does Not Meet Your Expectations.
