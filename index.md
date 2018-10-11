@@ -6,8 +6,8 @@ title: Summary
 I’m a PhD student at University of Amsterdam and Samsung AI supervised by Dmitry Vetrov and Max Welling. My research is focused on Bayesian Deep Learning. 
 Also, I'm a teacher assistant at several Machine Learning courses of our [scientific group](http://bayesgroup.ru/teaching/).
 <br />
-
-My resume is available [here](https://docs.google.com/document/d/1s7wPBTrbM4LNM9elzAjepc5RLGLobmzAiVVUy1kxDTU/edit?usp=sharing).
+<br />
+My CV is available [here](https://docs.google.com/document/d/1s7wPBTrbM4LNM9elzAjepc5RLGLobmzAiVVUy1kxDTU/edit?usp=sharing).
  
 ## News 
 - I joined Samsung AI Research at Moscow.
