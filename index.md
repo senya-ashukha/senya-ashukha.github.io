@@ -3,7 +3,7 @@ layout: home
 title: Summary
 ---
 
-I'm getting PhD at University of Amsterdam and BayesGroup, focused on Bayesian Deep Learning by supervision of Dmitry Vetrov and Max Welling.
+I’m a PhD student at University of Amsterdam and Samsung AI supervised by Dmitry Vetrov and Max Welling. My research is focused on Bayesian Deep Learning. 
 Also, I teach several scientific seminars on Machine Learning and involved in research at HSE. 
 
 <br />
