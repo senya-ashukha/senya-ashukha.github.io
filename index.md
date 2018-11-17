@@ -10,9 +10,7 @@ Also, I'm a teacher assistant at several Machine Learning courses of our [scient
 My CV is available [here](https://docs.google.com/document/d/1s7wPBTrbM4LNM9elzAjepc5RLGLobmzAiVVUy1kxDTU/edit?usp=sharing).
  
 ## News 
-- We released [preprint](https://arxiv.org/abs/1810.06943) on 
-The Deep Weight Prior - a Prior Distribution for CNNs via Generative Modeling of Parameters of the Model.
-- I joined Samsung AI Research at Moscow.
+- We released [preprint](https://arxiv.org/abs/1810.06943) on The Deep Weight Prior.
 - Two papers [Uncertainty Estimation via Stochastic Batch Normalization](https://openreview.net/forum?id=r1yXEdkvz), [Bayesian Incremental Learning for Deep Neural Networks](https://openreview.net/forum?id=ByZzFPJDG) have been accepted to ICLR Workshop 2018!
 - We released [preprint](https://arxiv.org/abs/1803.03764) on Variance Networks: When Expectation Does Not Meet Your Expectations.
 - Our StructuredBP via Log-Normal Multiplicative Noise [paper](https://arxiv.org/abs/1705.07283) was accepted to NIPS’17.
