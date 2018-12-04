@@ -34,7 +34,7 @@ sudo docker attach b36bdc52e0a1
 Ctrl + p + q
 ```
 
-7) **Save container state (installed packages, data)**:
+7) **Save container state (installed packages)**:
 
 To save it you need to "commit" changes by the following command:
 
