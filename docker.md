@@ -6,6 +6,8 @@ We will use nvidia-docker, intatlation instructions is [here](https://github.com
 
 ```sudo docker pull uber/horovod:0.15.2-tf1.12.0-torch0.4.1-py3.5```
 
+if you have an error "unauthorized: authentication required" here, try to generate a key at https://ngc.nvidia.com/configuration/api-key and type ```docker login nvcr.io```.
+
 3) **Run container in background**: 
 
 ```sudo nvidia-docker run --detach -it uber/horovod:0.15.2-tf1.12.0-torch0.4.1-py3.5```
