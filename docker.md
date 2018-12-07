@@ -57,6 +57,8 @@ uber/horovod        0.15.2-tf1.12.0-torch0.4.1-py3.5   c73fe5ca1f47        5 day
 
 Create login at ```https://hub.docker.com``` and use [this](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html) instruction. 
 
+```nvidia-docker push arsashuha/horovod:v2```
+
 _Be careful do not make your code available online!_
 
 9) **Data transfer**:
