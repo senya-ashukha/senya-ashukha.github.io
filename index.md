@@ -10,7 +10,7 @@ Also, I'm a teacher assistant at several Machine Learning courses of our [scient
 My CV is available [here](https://docs.google.com/document/d/1s7wPBTrbM4LNM9elzAjepc5RLGLobmzAiVVUy1kxDTU/edit?usp=sharing).
  
 ## News 
-- [The Deep Weight Prior](https://arxiv.org/abs/1810.06943) and [Variance Networks](https://arxiv.org/abs/1803.03764) got acepted to ICLR'19!
+- [The Deep Weight Prior](https://arxiv.org/abs/1810.06943) and [Variance Networks](https://arxiv.org/abs/1803.03764) got accepted to ICLR'19!
 - We released [preprint](https://arxiv.org/abs/1810.06943) on The Deep Weight Prior.
 - Two papers [Uncertainty Estimation via Stochastic Batch Normalization](https://openreview.net/forum?id=r1yXEdkvz), [Bayesian Incremental Learning for Deep Neural Networks](https://openreview.net/forum?id=ByZzFPJDG) have been accepted to ICLR Workshop 2018!
 - We released [preprint](https://arxiv.org/abs/1803.03764) on Variance Networks: When Expectation Does Not Meet Your Expectations.
