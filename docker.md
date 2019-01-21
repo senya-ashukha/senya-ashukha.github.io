@@ -1,3 +1,10 @@
+# Official instruction
+
+This instraction probably is betteer then myne
+https://www.tensorflow.org/install/docker 
+
+# My Bicycle
+
 1) **Installing docker**: 
 
 We will use nvidia-docker, intatlation instructions is [here](https://github.com/NVIDIA/nvidia-docker#ubuntu-140416041804-debian-jessiestretch)
