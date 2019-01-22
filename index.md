@@ -5,7 +5,7 @@ title: Summary
 
 I am a Ph.D. candidate at Samsung AI Center Moscow supervised by [Dmitry Vetrov](https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en). 
 Currently, I'm working on reinforcement learning and probabilistic deep learning. 
-At [HSE](https://www.hse.ru/en/), I'm working as a teacher assistant for several Machine Learning courses of our [scientific group](http://bayesgroup.ru/teaching/).
+At [HSE](https://www.hse.ru/en/), I am working as a teacher assistant for several Machine Learning courses of our [scientific group](http://bayesgroup.ru/teaching/).
 <br />
 <br />
 My CV is available [here](https://docs.google.com/document/d/1s7wPBTrbM4LNM9elzAjepc5RLGLobmzAiVVUy1kxDTU/edit?usp=sharing).
