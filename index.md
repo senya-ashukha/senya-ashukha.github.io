@@ -8,7 +8,7 @@ Currently, I'm working on reinforcement learning and probabilistic deep learning
 At [HSE](https://www.hse.ru/en/), I am working as a teacher assistant for several Machine Learning courses of our [scientific group](http://bayesgroup.ru/teaching/).
 <br />
 <br />
-Links: [CV](https://docs.google.com/document/d/1s7wPBTrbM4LNM9elzAjepc5RLGLobmzAiVVUy1kxDTU/edit?usp=sharing), [Google Scholar](https://scholar.google.com/citations?user=IU-kuP8AAAAJ&hl=en), [GitHub](https://github.com/senya-ashukha), [Twitter](https://twitter.com/senya_ashuha), [e-mail](http://mailtoto:ars.ashuha@gmail.com)
+Links: [CV](https://docs.google.com/document/d/1s7wPBTrbM4LNM9elzAjepc5RLGLobmzAiVVUy1kxDTU/edit?usp=sharing), [Google Scholar](https://scholar.google.com/citations?user=IU-kuP8AAAAJ&hl=en), [GitHub](https://github.com/senya-ashukha), [Twitter](https://twitter.com/senya_ashuha), [e-mail](mailto:ars.ashuha@gmail.com)
  
 ## News 
 - Two papers [The Deep Weight Prior](https://openreview.net/forum?id=ByGuynAct7) and [Variance Networks](https://openreview.net/forum?id=B1GAUs0cKQ) got accepted to ICLR 2019!
