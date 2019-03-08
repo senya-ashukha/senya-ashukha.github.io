@@ -3,7 +3,7 @@ layout: home
 title: Summary
 ---
 
-I am a Research Scientist at Samsung AI Center Moscow supervised by [Dmitry Vetrov](https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en). 
+I am a Research Scientist at Samsung AI Center Moscow supervised by [Dmitry Vetrov](https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en) in collabortion with [Max Welling](http://scholar.google.com/citations?user=8200InoAAAAJ&hl=en). 
 Currently, I'm working on reinforcement learning and probabilistic deep learning. 
 At [HSE](https://www.hse.ru/en/), I am working as a teacher assistant for several Machine Learning courses of our [scientific group](http://bayesgroup.ru/teaching/).
 <br />
