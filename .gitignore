@@ -1,5 +1,7 @@
 ## Core latex/pdflatex auxiliary files:
 *DS_Store*
+*.jekyll-*
+*_site*
 *.aux
 *.lof
 *.log
