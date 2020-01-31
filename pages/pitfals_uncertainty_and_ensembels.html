@@ -1,0 +1,550 @@
+---
+permalink: /pitfalls-uncertainty&ensembling 
+---
+
+<style type="text/css">
+ * { padding: 0; margin: 0;}
+
+    .container {
+        padding: 0px;
+        margin: 0px;
+        color: #404040;
+        font-size: 15pt;
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        color: #444;
+        /*background-color: #FFFDFA;*/
+        /*background: linear-gradient(to right, white, #eee, white);
+        background: -webkit-linear-gradient( right, white, #eee, white)*/
+        /*background-image: url("/PaintSwatches_1400x900.jpg");*/
+        /*font-family: 'textbook', arial, sans-serif;*/
+        /*margin-left: auto;
+        margin-right: auto;*/
+        /*max-width: 2000px;*/
+    }
+    body {
+        background-color: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+    }
+
+
+   .section {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+
+   .title {
+      color: #000000;
+      font-family: 'Roboto Condensed', sans-serif;
+      padding-top: 10px;
+      padding-bottom: 25px;
+      font-size: 36pt;
+      line-height: 100%;
+      font-weight: 700;
+      color: #444;
+    }
+    
+    .author {
+      font-size: 10pt;
+    }
+
+    .section_title {
+      color: #000000;
+      font-family: 'Roboto Condensed', sans-serif;
+      /*padding-top: 10px;*/
+      /*padding-bottom: 10px;*/
+      font-size: 24pt;
+      line-height: 100%;
+      font-weight: 700;
+      padding-bottom: 10px;
+      color: #444;
+      /*margin-left: auto;
+        margin-right: auto;
+      /*line-height: 100%;*/
+      /*font-weight: 700;*/
+    }
+    
+  .shadow {
+      -webkit-box-shadow: 5px 5px 5px #aaa;
+      -moz-box-shadow: 5px 5px 5px #aaa;
+      box-shadow: 5px 5px 5px #aaa;
+      margin-bottom: 10px;
+  }
+
+  .aff {
+      margin-bottom: 16px;
+      /*max-width: 40px;*/
+      max-height: 30px
+  }
+
+
+
+    .img_authors {
+      position: relative;
+      max-width: 130px;
+      max-height: 130px
+    }
+
+    .img_links {
+      position: relative;
+      max-width: 70px;
+      max-height: 70px
+    }
+
+
+.text {
+    position:relative;
+    line-height:2em;
+    overflow:hidden;
+}
+.fadingEffect {
+    position:absolute;
+    top:0; bottom:0; right:0;
+    width:100%;
+    background:#FFFAFA;
+    -moz-animation: showHide 5s ease-in alternate infinite; /* Firefox */
+    -webkit-animation: showHide 5s ease-in alternate infinite; /* Safari and Chrome */
+    -ms-animation: showHide 5s ease-in alternate infinite; /* IE10 */
+    -o-animation: showHide 5s ease-in alternate infinite; /* Opera */
+    animation: showHide 5s ease-in alternate infinite;
+}
+@-webkit-keyframes showHide { /* Chrome, Safari */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-moz-keyframes showHide { /* FF */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-ms-keyframes showHide { /* IE10 */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-o-keyframes showHide { /* Opera */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@keyframes showHide {
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+
+
+#cf {
+  position:relative;
+  max-height:301px;
+  /*width:450px;*/
+
+  width:100%;
+  height:100%;
+  /*overflow:hidden; */
+  /*width:inherit;*/
+
+  /*max-height: auto;*/
+
+  /*margin:0 auto;*/
+}
+
+#cf img {
+  position:absolute;
+  
+  /*height:100%;*/
+  /*width:100%;*/
+
+  opacity: 0;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  animation-name: cfFadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 28s;  /* 7*4 */
+}
+
+
+@keyframes cfFadeInOut {
+  /* fade out */
+  0% {
+    opacity:0;
+  }
+  5% {
+    opacity:1;
+  }
+  /* fade in */
+  14.28% {
+    opacity:1;
+  }
+  19.28% {
+    opacity:0;
+  }
+}
+
+#cf img:nth-of-type(7) {
+  animation-delay: 24s;
+}
+#cf img:nth-of-type(6) {
+  animation-delay: 20s;
+}
+#cf img:nth-of-type(5) {
+  animation-delay: 16s;
+}
+#cf img:nth-of-type(4) {
+  animation-delay: 12s;
+}
+#cf img:nth-of-type(3) {
+  animation-delay: 8s;
+}
+#cf img:nth-of-type(2) {
+  animation-delay: 4s;
+}
+#cf img:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none !important;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+    margin-right:-4px;
+    min-width: 170px;
+}
+
+html, body {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100%;             /* need for iframe height 100% to work */
+}
+
+iframe {
+  box-sizing: border-box;   /* make the border size be included in the height */
+  /*display: block;            make them block to fix white space margin */
+  width: 100%;
+}
+
+.hint {
+  color: #A00;
+  font-size: 10pt;
+  margin-bottom: 10px;
+}
+
+.img-process {
+  /*width: 100%;*/
+  margin: 5px;
+  max-height: 200px; 
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+}
+.img-process:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.centeredd {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning</title>
+      <meta property="og:image" content="https://raw.githubusercontent.com/DmitryUlyanov/deep-image-prior/master/data/teaser_compiled.jpg"/>
+      <meta property="og:title" content="Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning" />
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"><!-- <link rel="stylesheet" href="../css/bootstrap-theme.min.css"> -->
+
+      <!-- Google fonts -->
+      <!-- <link href="../css/google-fonts.css" rel="stylesheet" type="text/css"> -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:300italic,400italic,600italic,400,700,300,600" rel="stylesheet" type="text/css">
+
+      <!-- Photoswipe -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.css" rel="stylesheet">
+
+      <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+      });
+      </script>
+
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script>
+  function resizeIframe(obj) {
+    obj.style.height = 0;
+    obj.style.height = (obj.contentWindow.document.body.scrollHeight + 5) + 'px';
+  }
+
+
+
+
+  
+</script>
+    <script language="JavaScript">
+
+      function resize_iframe()
+      {
+        obj = document.getElementById("myiframe")
+
+        obj.style.height = 0;
+        obj.style.height = (obj.contentWindow.document.body.scrollHeight) + 'px';
+        
+        document.getElementById("cf").style.height = document.getElementById("lastimage").height + 8;
+      }
+      window.onresize=resize_iframe; 
+      
+
+    </script>
+
+  </head>
+
+  <body>
+    <script src="zepto.min.js"></script>
+  <script>
+    window.addEventListener('message', function(event) {
+      if(height = event.data['height']) {
+        $('iframe').css('height', height + 'px')
+      }
+    });
+    
+
+    // var resizeEvent = new Event('resize');
+    // window.dispatchEvent(resizeEvent);
+    
+  </script>
+  <div class="container">
+
+
+    <!-- ====================================================== -->
+    <!-- ===================== TITLE ========================== -->
+    <!-- ====================================================== -->
+    <center>
+          <div class="title">Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning</div>
+    </center>
+   
+
+ <center>
+      <div class="row row-eq-height" style="margin-bottom: -10px">
+        <!-- <div class="col-sm-12"> -->
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <a href="https://senya-ashukha.github.io">
+                  <img src="./assets/projects/qwe.png" class="shadow img_authors img-circle img-responsive">
+                  <div class="author"><span style="font-weight: 600">Arsenii Ashukha*</span><br>Samsung AI Center, HSE</div>
+              </a>
+            <!-- </div> -->
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <a href="https://ru.linkedin.com/in/alexlyzhov">
+                  <img src="https://bayesgroup.ru/photos/lyzhov.jpg" class="shadow img_authors img-circle img-responsive">
+                  <div class="author"><span style="font-weight: 600">Alexander Lyzhov*</span><br>Samsung AI Center, HSE, Skoltech</div>
+              </a>
+            <!-- </div> -->
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <a href="https://scholar.google.com/citations?user=tJ6JXRYAAAAJ&hl=en">
+                  <img src="./assets/projects/dmolch2.jpeg" class="shadow img_authors img-circle img-responsive">
+                  <div class="author"><span style="font-weight: 600">Dmitry Molchanov*</span><br>Samsung AI Center, HSE</div>
+              </a>
+            <!-- </div> -->
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <a href="https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en">
+                  <img src="./assets/projects/vetrov.jpeg" class="shadow img_authors img-circle img-responsive">
+                  <div class="author"><span style="font-weight: 600">Dmitry Vetrov</span><br>Samsung AI Center, HSE</div>
+              </a>
+            <!-- </div> -->
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+    </center>
+
+    <!-- ====================================================== -->
+    <!-- ===================== ABSTRACT ======================= -->
+    <!-- ====================================================== -->
+    <div class="row section">
+      <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
+      <div class="section_title">Abstract</div>
+      <p> <!-- style="text-indent: 30px" -->
+        Uncertainty estimation and ensembling methods go hand-in-hand. Uncertainty estimation is one of the main benchmarks for assessment of ensembling performance. At the same time, deep learning ensembles have provided state-of-the-art results in uncertainty estimation. In this work, we focus on in-domain uncertainty for image classification. We explore the standards for its quantification and point out pitfalls of existing metrics. Avoiding these pitfalls, we perform a broad study of different ensembling techniques. To provide more insight in this study, we introduce the deep ensemble equivalent score and show that many sophisticated ensembling techniques—in terms of a test performance—are equivalent to an ensemble of only few independently trained networks.
+
+      </p>
+    </div>
+    
+
+
+    <!-- ====================================================== -->
+    <!-- ===================== LINKS ========================== -->
+    <!-- ====================================================== -->
+    <center>
+    <div class="row section" style="margin-bottom: -12px">
+      <div class="col-sm-10 col-sm-offset-1">
+      <!-- <div class="col-sm-12 center"> -->
+        <div class="col-sm-4" style="margin-bottom: 12px">
+          <a href="https://openreview.net/forum?id=BJxI5gHKDr">
+                <img src="./oprew.jpg" class="img_links img-responsive" >
+                <div class="author">Forum</div>
+            </a>
+        </div>
+        <div class="col-sm-4" style="margin-bottom: 12px">
+          <!-- <div class="col-sm-12"> -->
+            <a href="https://openreview.net/pdf?id=BJxI5gHKDr">
+                <img src="./pdf_icon_blue.svg" class="img_links img-responsive" >
+                <div class="author">Paper</div>
+            </a>
+          <!-- </div> -->
+        </div>
+
+        <div class="col-sm-4" style="margin-bottom: 12px">
+          <!-- <div class="col-sm-12"> -->
+            <a href="https://github.com/bayesgroup/pytorch-ensembles" >
+                <img src="/assets/projects/github.svg" class="img_links img-responsive">
+                <div class="author">Code</div>
+            </a>
+          <!-- </div> -->
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+  </center>
+
+
+    <!-- ====================================================== -->
+    <!-- ===================== Main idea ======================= -->
+    <!-- ====================================================== -->
+    <div class="row section">
+      <div class="section_title">Main points</div>
+      <p style="margin-top: 30px;">
+        <b>Pitfalls of metrics</b> Many common metrics of in-domain uncertainty estimation (e.g., log-likelihood, Brier score, calibration metrics, etc.) are either not comparable across different models or fail to provide a reliable ranking. For instance, although temperature scaling is not a standard for ensembling techniques, it is a must for a fair evaluation. Without calibration, the value of log-likelihood, as well as a ranking of the methods in evaluation may drastically change depending on temperature. That is often the case in practice. A comparison of the log-likelihood should only be performed at the optimal temperature.
+      </p>
+
+      <center>
+        <img src="./assets/pitfalls_uncertainty_and_ensembling/img1.png" class="img-responsive" width='50%'>
+        <p style="font-size:17px;width:86%;text-align:left;padding-left:5%;"> <i>Example</i>: The average log-likelihood (LL) of two ensembling techniques before (solid) and after (dashed) temperature scaling. Without temperature scaling test-time data augmentation decreases the LL of plain deep ensembles. But, when temperature scaling is enabled, deep ensembles with test-time data augmentation outperforms plain deep ensembles.</p>
+      </center>
+
+      <p style="margin-top: 30px;">
+        <b>Pitfalls of ensembles</b> Most of the popular ensembling techniques—one of the major tools for uncertainty estimation—require averaging predictions across dozens of members of an ensemble, yet are essentially equivalent to an ensemble of only few independently trained models.  
+      </p>
+
+      <center>
+        <img src="./assets/pitfalls_uncertainty_and_ensembling/dee-average.png" class="img-responsive" width='80%'>
+        <p style="font-size:17px;width:85%;text-align:left;padding-left:5%;"> A <i><b>deep ensemble equivalent score</b></i> (DEE) of a model is equal to the minimum size of a deep ensemble (an ensemble of independently train networks) that achieves the same performance as the model under consideration. The plot demonstrates that all of the ensembling techniques are far less efficient than deep ensembles during inference.
+        <br>
+        <br>
+        <i>Example</i>: If an ensemble achieves DEE score 5.0 after averaging of predictions of 100 networks, it means the ensemble has the same performance as a deep ensemble of only 5 models of the same architecture.
+        </p>
+      </center>
+
+
+
+      <p style="margin-top: 30px;">
+        <b>Missing part of ensembling</b> Test-time data-augmentation improves ensembles for free, both calibrated log-likelihood, and accuracy! Test-time data-augmentation simply computes prediction of every member of an ensemble on a single random augmentation on an image. Despite being a popular technique in a large-scale classification, test-time data-augmentation seems to be overlooked in the community of uncertainty estimation and ensembling.
+
+      </p>
+    </div>
+
+    <center>
+      <img src="./assets/pitfalls_uncertainty_and_ensembling/img3.png" class="img-responsive" width='80%'>
+    </center>
+   
+
+    <center>
+      <img src="./assets/pitfalls_uncertainty_and_ensembling/barplot-acc-cll.png" class="img-responsive">
+    </center>
+
+   
+    <div class="row section">
+      <div class="section_title">Acknowledgements</div>
+        <p>
+            Dmitry Vetrov was supported by the Russian Science Foundation grant no. 19-71-30020. The authors thank National Research University Higher School of Economics for providing computational resources. 
+            <a href=" https://dmitryulyanov.github.io/about">Dmitry Ulyanov </a> makes a nice webpage.
+        </p>
+    </div>
+
+<!--         <div class="row section">
+      <div class="section_title">BibTeX</div>
+      <pre>@inproceedings{
+  ashukha2020pitfalls,
+  title={Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning},
+  author={Arsenii Ashukha and Alexander Lyzhov and Dmitry Molchanov and Dmitry Vetrov},
+  booktitle={International Conference on Learning Representations},
+  year={2020},
+  url={https://openreview.net/forum?id=BJxI5gHKDr}
+}</pre> 
+    </div>
+ -->
+
+
+
+    <center>
+    <div class="row row-eq-height" style="margin-bottom: 18px; margin-top: 10px" >
+       
+          <div class="col-sm-5" style="margin-bottom: 12px">
+            <a href="https://research.samsung.com/aicenter_moscow">
+                <img src="/assets/logos/saic.png" class="img-responsive">
+            </a>
+          </div>
+          <div class="col-sm-5" style="margin-bottom: 12px">
+            <a href="https://cs.hse.ru/en/big-data/bayeslab/samsunglab/">
+              <img src="/assets/logos/hse.jpg" class="img-responsive">
+            </a>
+          </div>
+          <div class="col-sm-2" style="margin-bottom: 12px">
+            <a href="http://www.skoltech.ru/en/">
+              <img src="sk.jpg" class="img-responsive">
+            </a>
+          </div>
+    </div>
+    </center>
+  </div>
+</body>
+</html>
+ 
