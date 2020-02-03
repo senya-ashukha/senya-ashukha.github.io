@@ -413,7 +413,7 @@ iframe {
       <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
       <div class="section_title">Abstract</div>
       <p> <!-- style="text-indent: 30px" -->
-        Uncertainty estimation and ensembling methods go hand-in-hand. Uncertainty estimation is one of the main benchmarks for assessment of ensembling performance. At the same time, deep learning ensembles have provided state-of-the-art results in uncertainty estimation. In this work, we focus on in-domain uncertainty for image classification. We explore the standards for its quantification and point out pitfalls of existing metrics. Avoiding these pitfalls, we perform a broad study of different ensembling techniques. To provide more insight in this study, we introduce the deep ensemble equivalent score and show that many sophisticated ensembling techniques—in terms of a test performance—are equivalent to an ensemble of only few independently trained networks.
+      Uncertainty estimation and ensembling methods go hand-in-hand. Uncertainty estimation is one of the main benchmarks for assessment of ensembling performance. At the same time, deep learning ensembles have provided state-of-the-art results in uncertainty estimation. In this work, we focus on in-domain uncertainty for image classification. We explore the standards for its quantification and point out pitfalls of existing metrics. Avoiding these pitfalls, we perform a broad study of different ensembling techniques. To provide more insight in this study, we introduce the <i>deep ensemble equivalent</i> score (DEE) and show that many sophisticated ensembling techniques are equivalent to an ensemble of only few independently trained networks in terms of test performance.
 
       </p>
     </div>
@@ -429,14 +429,14 @@ iframe {
       <!-- <div class="col-sm-12 center"> -->
         <div class="col-sm-4" style="margin-bottom: 12px">
           <a href="https://openreview.net/forum?id=BJxI5gHKDr">
-                <img src="/assets/logos/oprew.jpg" class="img_links img-responsive" >
+                <img src="./assets/logos/oprew.jpg" class="img_links img-responsive" >
                 <div class="author">Forum</div>
             </a>
         </div>
         <div class="col-sm-4" style="margin-bottom: 12px">
           <!-- <div class="col-sm-12"> -->
             <a href="https://openreview.net/pdf?id=BJxI5gHKDr">
-                <img src="/assets/logos/pdf_icon_blue.svg" class="img_links img-responsive" >
+                <img src="./assets/logos/pdf_icon_blue.svg" class="img_links img-responsive" >
                 <div class="author">Paper</div>
             </a>
           <!-- </div> -->
@@ -445,7 +445,7 @@ iframe {
         <div class="col-sm-4" style="margin-bottom: 12px">
           <!-- <div class="col-sm-12"> -->
             <a href="https://github.com/bayesgroup/pytorch-ensembles" >
-                <img src="/assets/logos/github.svg" class="img_links img-responsive">
+                <img src="./assets/logos/github.svg" class="img_links img-responsive">
                 <div class="author">Code</div>
             </a>
           <!-- </div> -->
@@ -462,12 +462,12 @@ iframe {
     <div class="row section">
       <div class="section_title">Main points</div>
       <p style="margin-top: 30px;">
-        <b>Pitfalls of metrics</b> Many common metrics of in-domain uncertainty estimation (e.g., log-likelihood, Brier score, calibration metrics, etc.) are either not comparable across different models or fail to provide a reliable ranking. For instance, although temperature scaling is not a standard for ensembling techniques, it is a must for a fair evaluation. Without calibration, the value of log-likelihood, as well as a ranking of the methods in evaluation may drastically change depending on temperature. That is often the case in practice. A comparison of the log-likelihood should only be performed at the optimal temperature.
+        <b>Pitfalls of metrics</b> Many common metrics of in-domain uncertainty estimation (e.g. log-likelihood, Brier score, calibration metrics, etc.) are either not comparable across different models or fail to provide a reliable ranking. For instance, although temperature scaling is not a standard for ensembling techniques, it is a must for a fair evaluation. Without calibration, the value of the log-likelihood, as well as the ranking of different methods may drastically change depending on the softmax temperature, implicitly learned during training. Since no method achieves a perfect calibration out-of-the-box yet, comparison of the log-likelihood should only be performed at the optimal temperature.
       </p>
 
       <center>
-        <img src="/projects/pitfalls_unc_ens_iclr20/img1.png" class="img-responsive" width='50%'>
-        <p style="font-size:17px;width:86%;text-align:left;padding-left:5%;"> <i>Example</i>: The average log-likelihood (LL) of two ensembling techniques before (solid) and after (dashed) temperature scaling. Without temperature scaling test-time data augmentation decreases the LL of plain deep ensembles. But, when temperature scaling is enabled, deep ensembles with test-time data augmentation outperforms plain deep ensembles.</p>
+        <img src="./projects/pitfalls_unc_ens_iclr20/img1.png" class="img-responsive" width='50%'>
+        <p style="font-size:17px;width:86%;text-align:left;padding-left:5%;"> <i>Example</i>: The average log-likelihood (LL) of two ensembling techniques before (solid) and after (dashed) temperature scaling. Without temperature scaling test-time data augmentation decreases the log-likelihood of plain deep ensembles. However, when temperature scaling is enabled, deep ensembles with test-time data augmentation outperform plain deep ensembles.</p>
       </center>
 
       <p style="margin-top: 30px;">
@@ -476,7 +476,7 @@ iframe {
 
       <center>
         <img src="./projects/pitfalls_unc_ens_iclr20/dee-average.png" class="img-responsive" width='80%'>
-        <p style="font-size:17px;width:85%;text-align:left;padding-left:5%;"> A <i><b>deep ensemble equivalent score</b></i> (DEE) of a model is equal to the minimum size of a deep ensemble (an ensemble of independently train networks) that achieves the same performance as the model under consideration. The plot demonstrates that all of the ensembling techniques are far less efficient than deep ensembles during inference.
+        <p style="font-size:17px;width:85%;text-align:left;padding-left:5%;"> The <i><b>deep ensemble equivalent</b></i> score (DEE) of a model is equal to the minimum size of a deep ensemble (an ensemble of independently train networks) that achieves the same performance as the model under consideration. The plot demonstrates that all of the ensembling techniques are far less efficient than deep ensembles during inference.
         <br>
         <br>
         <i>Example</i>: If an ensemble achieves DEE score 5.0 after averaging of predictions of 100 networks, it means the ensemble has the same performance as a deep ensemble of only 5 models of the same architecture.
@@ -486,7 +486,7 @@ iframe {
 
 
       <p style="margin-top: 30px;">
-        <b>Missing part of ensembling</b> Test-time data-augmentation improves ensembles for free, both calibrated log-likelihood, and accuracy! Test-time data-augmentation simply computes prediction of every member of an ensemble on a single random augmentation on an image. Despite being a popular technique in a large-scale classification, test-time data-augmentation seems to be overlooked in the community of uncertainty estimation and ensembling.
+        <b>Missing part of ensembling</b> Test-time data augmentation improves ensembles for free, both calibrated log-likelihood, and accuracy! Test-time data augmentation simply computes prediction of every member of an ensemble on a single random augmentation on an image. Despite being a popular technique for large-scale image classification problems, test-time data augmentation seems to be overlooked in the community of uncertainty estimation and ensembling.
 
       </p>
     </div>
@@ -505,11 +505,14 @@ iframe {
       <div class="section_title">Acknowledgements</div>
         <p>
             Dmitry Vetrov was supported by the Russian Science Foundation grant no. 19-71-30020. The authors thank National Research University Higher School of Economics for providing computational resources. 
-            <a href=" https://dmitryulyanov.github.io/about">Dmitry Ulyanov </a> makes a nice webpages.
+        </br>
+            The webpage template borrowed from <a href=" https://dmitryulyanov.github.io/about">Dmitry Ulyanov</a>.
         </p>
     </div>
 
-<!--         <div class="row section">
+<!--
+ -->
+    <div class="row section">
       <div class="section_title">BibTeX</div>
       <pre>@inproceedings{
   ashukha2020pitfalls,
@@ -520,6 +523,7 @@ iframe {
   url={https://openreview.net/forum?id=BJxI5gHKDr}
 }</pre> 
     </div>
+<!--
  -->
 
 
@@ -529,17 +533,17 @@ iframe {
        
           <div class="col-sm-5" style="margin-bottom: 12px">
             <a href="https://research.samsung.com/aicenter_moscow">
-                <img src="/assets/logos/saic.png" class="img-responsive">
+                <img src="./assets/logos/saic.png" class="img-responsive">
             </a>
           </div>
           <div class="col-sm-5" style="margin-bottom: 12px">
             <a href="https://cs.hse.ru/en/big-data/bayeslab/samsunglab/">
-              <img src="/assets/logos/hse.jpg" class="img-responsive">
+              <img src="./assets/logos/hse.jpg" class="img-responsive">
             </a>
           </div>
           <div class="col-sm-2" style="margin-bottom: 12px">
             <a href="http://www.skoltech.ru/en/">
-              <img src="/assets/logos/sk.jpg" class="img-responsive">
+              <img src="./assets/logos/sk.jpg" class="img-responsive">
             </a>
           </div>
     </div>
