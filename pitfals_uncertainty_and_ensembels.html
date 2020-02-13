@@ -361,7 +361,7 @@ iframe {
     <!-- ===================== TITLE ========================== -->
     <!-- ====================================================== -->
     <center>
-          <div class="title"><font color="red">Draft Do Not Distribute</font>: Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning</div>
+          <div class="title">Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning</div>
     </center>
    
 
@@ -462,7 +462,7 @@ iframe {
     <div class="row section">
       <div class="section_title">Main points</div>
       <p style="margin-top: 30px;">
-        <b>Pitfalls of metrics</b> Many common metrics of in-domain uncertainty estimation (e.g. log-likelihood, Brier score, calibration metrics, etc.) are either not comparable across different models or fail to provide a reliable ranking. For instance, although temperature scaling is not a standard for ensembling techniques, it is a must for a fair evaluation. Without calibration, the value of the log-likelihood, as well as the ranking of different methods may drastically change depending on the softmax temperature, implicitly learned during training. Since no method achieves a perfect calibration out-of-the-box yet, comparison of the log-likelihood should only be performed at the optimal temperature.
+        <b>Pitfalls of metrics</b> Many common metrics of in-domain uncertainty estimation (e.g. log-likelihood, Brier score, calibration metrics, etc.) are either not comparable across different models or fail to provide a reliable ranking. For instance, although temperature scaling is not a standard for ensembling techniques, it is a must for a fair evaluation. Without calibration, the value of the log-likelihood, as well as the ranking of different methods may change drastically depending on the softmax temperature which is implicitly learned during training. Since no method achieves a perfect calibration out-of-the-box yet, comparison of the log-likelihood should only be performed at the optimal temperature.
       </p>
 
       <center>
@@ -479,14 +479,14 @@ iframe {
         <p style="font-size:17px;width:85%;text-align:left;padding-left:5%;"> The <i><b>deep ensemble equivalent</b></i> score (DEE) of a model is equal to the minimum size of a deep ensemble (an ensemble of independently train networks) that achieves the same performance as the model under consideration. The plot demonstrates that all of the ensembling techniques are far less efficient than deep ensembles during inference.
         <br>
         <br>
-        <i>Example</i>: If an ensemble achieves DEE score 5.0 after averaging of predictions of 100 networks, it means the ensemble has the same performance as a deep ensemble of only 5 models of the same architecture.
+        <i>Example</i>: If an ensemble achieves DEE score 5.0 after averaging of predictions of 100 networks, it means that the ensemble has the same performance as a deep ensemble of only 5 models of the same architecture.
         </p>
       </center>
 
 
 
       <p style="margin-top: 30px;">
-        <b>Missing part of ensembling</b> Test-time data augmentation improves ensembles for free, both calibrated log-likelihood, and accuracy! Test-time data augmentation simply computes prediction of every member of an ensemble on a single random augmentation on an image. Despite being a popular technique for large-scale image classification problems, test-time data augmentation seems to be overlooked in the community of uncertainty estimation and ensembling.
+        <b>Missing part of ensembling</b> Test-time data augmentation improves both calibrated log-likelihood and accuracy of ensembles for free! Test-time data augmentation simply computes the prediction of every member of the ensemble on a single random augmentation of an image. Despite being a popular technique for large-scale image classification problems, test-time data augmentation seems to be overlooked in the community of uncertainty estimation and ensembling.
 
       </p>
     </div>
@@ -502,11 +502,8 @@ iframe {
 
    
     <div class="row section">
-      <div class="section_title">Acknowledgements</div>
         <p>
-            Dmitry Vetrov was supported by the Russian Science Foundation grant no. 19-71-30020. The authors thank National Research University Higher School of Economics for providing computational resources. 
-        </br>
-            The webpage template borrowed from <a href=" https://dmitryulyanov.github.io/about">Dmitry Ulyanov</a>.
+            The webpage template was borrowed from <a href=" https://dmitryulyanov.github.io/about">Dmitry Ulyanov</a>.
         </p>
     </div>
 
@@ -551,4 +548,3 @@ iframe {
   </div>
 </body>
 </html>
- 
