@@ -1,100 +1,549 @@
-<!DOCTYPE HTML>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167086280-1"></script>
+---
+permalink: /pitfalls-uncertainty&ensembling 
+---
+
+<style type="text/css">
+ * { padding: 0; margin: 0;}
+
+    .container {
+        padding: 0px;
+        margin: 0px;
+        color: #404040;
+        font-size: 15pt;
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        color: #444;
+    }
+    body {
+        background-color: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+    }
+
+
+   .section {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+
+   .title {
+      color: #000000;
+      font-family: 'Roboto Condensed', sans-serif;
+      padding-top: 10px;
+      padding-bottom: 25px;
+      font-size: 36pt;
+      line-height: 100%;
+      font-weight: 700;
+      color: #444;
+    }
+    
+    .author {
+      font-size: 10pt;
+    }
+
+    .section_title {
+      color: #000000;
+      font-family: 'Roboto Condensed', sans-serif;
+      /*padding-top: 10px;*/
+      /*padding-bottom: 10px;*/
+      font-size: 24pt;
+      line-height: 100%;
+      font-weight: 700;
+      padding-bottom: 10px;
+      color: #444;
+      /*margin-left: auto;
+        margin-right: auto;
+      /*line-height: 100%;*/
+      /*font-weight: 700;*/
+    }
+    
+  .shadow {
+      -webkit-box-shadow: 5px 5px 5px #aaa;
+      -moz-box-shadow: 5px 5px 5px #aaa;
+      box-shadow: 5px 5px 5px #aaa;
+      margin-bottom: 10px;
+  }
+
+  .aff {
+      margin-bottom: 16px;
+      /*max-width: 40px;*/
+      max-height: 30px
+  }
+
+
+
+    .img_authors {
+      position: relative;
+      max-width: 130px;
+      max-height: 130px
+    }
+
+    .img_links {
+      position: relative;
+      max-width: 70px;
+      max-height: 70px
+    }
+
+
+.text {
+    position:relative;
+    line-height:2em;
+    overflow:hidden;
+}
+.fadingEffect {
+    position:absolute;
+    top:0; bottom:0; right:0;
+    width:100%;
+    background:#FFFAFA;
+    -moz-animation: showHide 5s ease-in alternate infinite; /* Firefox */
+    -webkit-animation: showHide 5s ease-in alternate infinite; /* Safari and Chrome */
+    -ms-animation: showHide 5s ease-in alternate infinite; /* IE10 */
+    -o-animation: showHide 5s ease-in alternate infinite; /* Opera */
+    animation: showHide 5s ease-in alternate infinite;
+}
+@-webkit-keyframes showHide { /* Chrome, Safari */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-moz-keyframes showHide { /* FF */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-ms-keyframes showHide { /* IE10 */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-o-keyframes showHide { /* Opera */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@keyframes showHide {
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+
+
+#cf {
+  position:relative;
+  max-height:301px;
+  /*width:450px;*/
+
+  width:100%;
+  height:100%;
+  /*overflow:hidden; */
+  /*width:inherit;*/
+
+  /*max-height: auto;*/
+
+  /*margin:0 auto;*/
+}
+
+#cf img {
+  position:absolute;
+  
+  /*height:100%;*/
+  /*width:100%;*/
+
+  opacity: 0;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  animation-name: cfFadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 28s;  /* 7*4 */
+}
+
+
+@keyframes cfFadeInOut {
+  /* fade out */
+  0% {
+    opacity:0;
+  }
+  5% {
+    opacity:1;
+  }
+  /* fade in */
+  14.28% {
+    opacity:1;
+  }
+  19.28% {
+    opacity:0;
+  }
+}
+
+#cf img:nth-of-type(7) {
+  animation-delay: 24s;
+}
+#cf img:nth-of-type(6) {
+  animation-delay: 20s;
+}
+#cf img:nth-of-type(5) {
+  animation-delay: 16s;
+}
+#cf img:nth-of-type(4) {
+  animation-delay: 12s;
+}
+#cf img:nth-of-type(3) {
+  animation-delay: 8s;
+}
+#cf img:nth-of-type(2) {
+  animation-delay: 4s;
+}
+#cf img:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none !important;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+    margin-right:-4px;
+    min-width: 170px;
+}
+
+html, body {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100%;             /* need for iframe height 100% to work */
+}
+
+iframe {
+  box-sizing: border-box;   /* make the border size be included in the height */
+  /*display: block;            make them block to fix white space margin */
+  width: 100%;
+}
+
+.hint {
+  color: #A00;
+  font-size: 10pt;
+  margin-bottom: 10px;
+}
+
+.img-process {
+  /*width: 100%;*/
+  margin: 5px;
+  max-height: 200px; 
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+}
+.img-process:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.centeredd {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning</title>
+      <meta property="og:image" content="https://raw.githubusercontent.com/senya-ashukha/senya-ashukha.github.io/master/projects/pitfalls_unc_ens_iclr20/teaser.png"/>
+      <meta property="og:title" content="Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning" />
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"><!-- <link rel="stylesheet" href="../css/bootstrap-theme.min.css"> -->
+
+      <!-- Google fonts -->
+      <!-- <link href="../css/google-fonts.css" rel="stylesheet" type="text/css"> -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:300italic,400italic,600italic,400,700,300,600" rel="stylesheet" type="text/css">
+
+      <!-- Photoswipe -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.css" rel="stylesheet">
+
+      <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+      });
+      </script>
+
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  function resizeIframe(obj) {
+    obj.style.height = 0;
+    obj.style.height = (obj.contentWindow.document.body.scrollHeight + 5) + 'px';
+  }
 
-    gtag('config', 'UA-167086280-1');
-  </script>
 
-  <title>Senya Ashukha</title>
+
+
   
-  <meta name="author" content="Jon Barron">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="icon" type="image/png" href="images/seal_icon.png">
-</head>
+</script>
+    <script language="JavaScript">
 
-<body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Arsenii (Senya) Ashukha</name>
-              </p>
-              <p>I am a PhD candidate at <a href="https://bayesgroup.ru"> Bayesian methods research group</a> and <a href="https://research.samsung.com/aicenter_moscow">Samsung AI Center Moscow</a> with <a href="https://bayesgroup.ru/people/dmitry-vetrov/">Dmitriy Vetrov</a>, where I work on probabilistic deep learning. 
-              </p>
-              <p align=center>
-                <a href="mailto:ars.ashuha@gmail.com" target="_blank">Email</a> &nbsp/&nbsp
-                <a href="https://senya-ashukha.github.io/arsenii-ashukha-cv.pdf">CV</a> &nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?user=IU-kuP8AAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://github.com/senya-ashukha">GitHub</a> &nbsp/&nbsp
-                <a href="https://twitter.com/senya_ashuha">Twitter</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/images/senya-ashukha.jpg"><img style="border-radius:50%;width:100%;max-width:100%" alt="profile photo" src="images/senya-ashukha.jpg" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
+      function resize_iframe()
+      {
+        obj = document.getElementById("myiframe")
 
-        <table style="width:100%;border:0px;border-spacing:px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>News</heading>
-            <ul>
-              <li> 
-                <a href="https://openreview.net/forum?id=BJxI5gHKDr"> Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning</a> is accepted to ICLR 2020. <br/>See 
-                <a href="https://senya-ashukha.github.io/pitfalls-uncertainty&ensembling">Blog post</a> / 
-                <a href="https://iclr.cc/virtual_2020/poster_BJxI5gHKDr.html">Poster video (5mins)</a> / 
-                <a href="https://github.com/bayesgroup/pytorch-ensembles">Code</a>.
-              </li>
-              <li> 
-                Two papers <a href="https://openreview.net/forum?id=ByGuynAct7"> The Deep  Weight Prior</a> (a joint work with AMLab UvA) and <a href="https://openreview.net/forum?id=B1GAUs0cKQ"> Variance Networks</a> are accepted to ICLR 2019
-              </li>
-              <li> 
-                I joined <a href="https://research.samsung.com/aicenter_moscow">Samsung AI Center Moscow</a> as a Student researcher (PhD Candidate), where I will be working at machine learning lab under supervision of <a href="https://bayesgroup.ru/people/dmitry-vetrov/">Dmitriy Vetrov</a> 
-              </li>
-              <li>
-                <a href="http://proceedings.mlr.press/v70/molchanov17a.html"> StructuredBP via Log-Normal Multiplicative Noise </a> is accepted to NeurIPS 2017
-              </li>
-              <li>
-                <a href="http://proceedings.mlr.press/v70/molchanov17a.html"> Variational Dropout Sparsifies DNNs</a> is accepted to ICML 2017
-              </li>
-            </ul>
-            </td>
-          </tr>
-        </tbody></table>
+        obj.style.height = 0;
+        obj.style.height = (obj.contentWindow.document.body.scrollHeight) + 'px';
         
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>
-                I'm interested in deep learning, probabilistic inference, and generative models.
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
+        document.getElementById("cf").style.height = document.getElementById("lastimage").height + 8;
+      }
+      window.onresize=resize_iframe; 
+      
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <p align="right">
-                <a href="https://people.eecs.berkeley.edu/~barron/">This guy makes nice webpages.</a>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-      </td>
-    </tr>
-  </table>
+    </script>
+
+  </head>
+
+  <body>
+    <script src="zepto.min.js"></script>
+  <script>
+    window.addEventListener('message', function(event) {
+      if(height = event.data['height']) {
+        $('iframe').css('height', height + 'px')
+      }
+    });
+    
+
+    // var resizeEvent = new Event('resize');
+    // window.dispatchEvent(resizeEvent);
+    
+  </script>
+  <div class="container">
+
+
+    <!-- ====================================================== -->
+    <!-- ===================== TITLE ========================== -->
+    <!-- ====================================================== -->
+    <center>
+          <div class="title">Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning</div>
+    </center>
+   
+
+ <center>
+      <div class="row row-eq-height" style="margin-bottom: -10px">
+        <!-- <div class="col-sm-12"> -->
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <a href="https://senya-ashukha.github.io">
+                  <img src="./images/senya-ashukha.jpg" class="shadow img_authors img-circle img-responsive">
+                  <div class="author"><span style="font-weight: 600">Arsenii Ashukha*</span><br>Samsung AI Center, HSE</div>
+              </a>
+            <!-- </div> -->
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <a href="https://scholar.google.ru/citations?user=5LXTi40AAAAJ&hl=en">
+                  <img src="https://bayesgroup.ru/photos/lyzhov.jpg" class="shadow img_authors img-circle img-responsive">
+                  <div class="author"><span style="font-weight: 600">Alexander Lyzhov*</span><br>Samsung AI Center, HSE, Skoltech</div>
+              </a>
+            <!-- </div> -->
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <a href="https://scholar.google.com/citations?user=tJ6JXRYAAAAJ&hl=en">
+                  <img src="./images/dmolch2.jpeg" class="shadow img_authors img-circle img-responsive">
+                  <div class="author"><span style="font-weight: 600">Dmitry Molchanov*</span><br>Samsung AI Center, HSE</div>
+              </a>
+            <!-- </div> -->
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <a href="https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en">
+                  <img src="./images/vetrov.jpeg" class="shadow img_authors img-circle img-responsive">
+                  <div class="author"><span style="font-weight: 600">Dmitry Vetrov</span><br>Samsung AI Center, HSE</div>
+              </a>
+            <!-- </div> -->
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+    </center>
+
+    <!-- ====================================================== -->
+    <!-- ===================== ABSTRACT ======================= -->
+    <!-- ====================================================== -->
+    <div class="row section">
+      <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
+      <div class="section_title">Abstract</div>
+      <p> <!-- style="text-indent: 30px" -->
+      Uncertainty estimation and ensembling methods go hand-in-hand. Uncertainty estimation is one of the main benchmarks for assessment of ensembling performance. At the same time, deep learning ensembles have provided state-of-the-art results in uncertainty estimation. In this work, we focus on in-domain uncertainty for image classification. We explore the standards for its quantification and point out pitfalls of existing metrics. Avoiding these pitfalls, we perform a broad study of different ensembling techniques. To provide more insight in this study, we introduce the <i>deep ensemble equivalent</i> score (DEE) and show that many sophisticated ensembling techniques are equivalent to an ensemble of only few independently trained networks in terms of test performance.
+
+      </p>
+    </div>
+    
+
+
+    <!-- ====================================================== -->
+    <!-- ===================== LINKS ========================== -->
+    <!-- ====================================================== -->
+    <center>
+    <div class="row section" style="margin-bottom: -12px">
+      <div class="col-sm-10 col-sm-offset-1">
+      <!-- <div class="col-sm-12 center"> -->
+        <div class="col-sm-3" style="margin-bottom: 12px">
+          <a href="https://openreview.net/forum?id=BJxI5gHKDr">
+                <img src="./assets/logos/oprew.jpg" class="img_links img-responsive" >
+                <div class="author">Forum</div>
+            </a>
+        </div>
+        <div class="col-sm-3" style="margin-bottom: 12px">
+          <!-- <div class="col-sm-12"> -->
+            <a href="https://openreview.net/pdf?id=BJxI5gHKDr">
+                <img src="./assets/logos/pdf_icon_blue.svg" class="img_links img-responsive" >
+                <div class="author">Paper</div>
+            </a>
+          <!-- </div> -->
+        </div>
+
+        <div class="col-sm-3" style="margin-bottom: 12px">
+          <!-- <div class="col-sm-12"> -->
+            <a href="https://github.com/bayesgroup/pytorch-ensembles" >
+                <img src="./assets/logos/github.svg" class="img_links img-responsive">
+                <div class="author">Code</div>
+            </a>
+          <!-- </div> -->
+        </div>
+        <div class="col-sm-3" style="margin-bottom: 12px">
+          <!-- <div class="col-sm-12"> -->
+            <a href="https://iclr.cc/virtual_2020/poster_BJxI5gHKDr.html" >
+                <img src="./assets/logos/iclr_logo.png" class="img_links img-responsive">
+                <div class="author">Poster video (5 mins)</div>
+            </a>
+          <!-- </div> -->
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+  </center>
+
+
+    <!-- ====================================================== -->
+    <!-- ===================== Main idea ======================= -->
+    <!-- ====================================================== -->
+    <div class="row section">
+      <div class="section_title">Main points</div>
+      <p style="margin-top: 30px;">
+        <b>Pitfalls of metrics</b> Many common metrics of in-domain uncertainty estimation (e.g. log-likelihood, Brier score, calibration metrics, etc.) are either not comparable across different models or fail to provide a reliable ranking. For instance, although temperature scaling is not a standard for ensembling techniques, it is a must for a fair evaluation. Without calibration, the value of the log-likelihood, as well as the ranking of different methods may change drastically depending on the softmax temperature which is implicitly learned during training. Since no method achieves a perfect calibration out-of-the-box yet, comparison of the log-likelihood should only be performed at the optimal temperature.
+      </p>
+
+      <center>
+        <img src="./projects/pitfalls_unc_ens_iclr20/img1.png" class="img-responsive" width='50%'>
+        <p style="font-size:17px;width:86%;text-align:left;padding-left:5%;"> <i>Example</i>: The average log-likelihood (LL) of two ensembling techniques before (solid) and after (dashed) temperature scaling. Without temperature scaling test-time data augmentation decreases the log-likelihood of plain deep ensembles. However, when temperature scaling is enabled, deep ensembles with test-time data augmentation outperform plain deep ensembles.</p>
+      </center>
+
+      <p style="margin-top: 30px;">
+        <b>Pitfalls of ensembles</b> Most of the popular ensembling techniques—one of the major tools for uncertainty estimation—require averaging predictions across dozens of members of an ensemble, yet are essentially equivalent to an ensemble of only few independently trained models.  
+      </p>
+
+      <center>
+        <img src="./projects/pitfalls_unc_ens_iclr20/dee-average.png" class="img-responsive" width='80%'>
+        <p style="font-size:17px;width:85%;text-align:left;padding-left:5%;"> The <i><b>deep ensemble equivalent</b></i> score (DEE) of a model is equal to the minimum size of a deep ensemble (an ensemble of independently train networks) that achieves the same performance as the model under consideration. The plot demonstrates that all of the ensembling techniques are far less efficient than deep ensembles during inference.
+        <br>
+        <br>
+        <i>Example</i>: If an ensemble achieves DEE score 5.0 after averaging of predictions of 100 networks, it means that the ensemble has the same performance as a deep ensemble of only 5 models of the same architecture.
+        </p>
+      </center>
+
+
+
+      <p style="margin-top: 30px;">
+        <b>Missing part of ensembling</b> Test-time data augmentation improves both calibrated log-likelihood and accuracy of ensembles for free! Test-time data augmentation simply computes the prediction of every member of the ensemble on a single random augmentation of an image. Despite being a popular technique for large-scale image classification problems, test-time data augmentation seems to be overlooked in the community of uncertainty estimation and ensembling.
+
+      </p>
+    </div>
+
+    <center>
+      <img src="./projects/pitfalls_unc_ens_iclr20/img3.png" class="img-responsive" width='80%'>
+    </center>
+   
+
+    <center>
+      <img src="./projects/pitfalls_unc_ens_iclr20/barplot-acc-cll.png" class="img-responsive">
+    </center>
+
+   
+    <div class="row section">
+        <p>
+            The webpage template was borrowed from <a href=" https://dmitryulyanov.github.io/about">Dmitry Ulyanov</a>.
+        </p>
+    </div>
+
+<!--
+ -->
+    <div class="row section">
+      <div class="section_title">BibTeX</div>
+      <pre>@article{ashukha2020pitfalls,
+  title={Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning},
+  author={Ashukha, Arsenii and Lyzhov, Alexander and Molchanov, Dmitry and Vetrov, Dmitry},
+  journal={arXiv preprint arXiv:2002.06470},
+  year={2020}
+}
+}</pre> 
+    </div>
+<!--
+ -->
+
+
+
+    <center>
+    <div class="row row-eq-height" style="margin-bottom: 18px; margin-top: 10px" >
+       
+          <div class="col-sm-5" style="margin-bottom: 12px">
+            <a href="https://research.samsung.com/aicenter_moscow">
+                <img src="./assets/logos/saic.png" class="img-responsive">
+            </a>
+          </div>
+          <div class="col-sm-5" style="margin-bottom: 12px">
+            <a href="https://cs.hse.ru/en/big-data/bayeslab/samsunglab/">
+              <img src="./assets/logos/hse.jpg" class="img-responsive">
+            </a>
+          </div>
+          <div class="col-sm-2" style="margin-bottom: 12px">
+            <a href="http://www.skoltech.ru/en/">
+              <img src="./assets/logos/sk.jpg" class="img-responsive">
+            </a>
+          </div>
+    </div>
+    </center>
+  </div>
 </body>
-
 </html>
