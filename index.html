@@ -96,10 +96,10 @@
 
     
           <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src='projects/pitfalls_unc_ens_iclr20/pic.png' width="100%">
+            <td style="padding:15px;width:25%;vertical-align:middle">
+                <img src='projects/pitfalls_unc_ens_iclr20/pic.png' width="160px">
             </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td style="padding:15px;width:75%;vertical-align:middle">
               <a href="https://openreview.net/forum?id=BJxI5gHKDr">
                 <papertitle>Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning</papertitle>
               </a>
@@ -118,10 +118,42 @@
                 <a href="https://senya-ashukha.github.io/projects/pitfalls_unc_ens_iclr20/paper.txt" target="_blank">bibtex</a>
               <p></p>
               <p>
-              Many conventional uncertainty estimation metrics (e.g. log-likelihood) are unreliable and cannot be used for benchmarking. The "efficient" methods for training ensembles actually appear to be extremely inefficient comparing to pure Deep Ensembles. The test-time augmentation improves ensembles with no aditional training or evaluation cost! </p>
+              Many uncertainty estimation metrics (e.g., log-likelihood) are unreliable and should not be used for benchmarking. The "efficient" methods for training ensembles have the same performance as Deep Ensemble of only few networks, while simple test-time data augmentation improves all ensembles with no additional training or evaluation cost! </p>
+            </td>
+          </tr> 
+
+          <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
+            <td style="padding:15px;width:25%;vertical-align:middle">
+                <img src='projects/svdo_icml17/svdo_prev.png' width="160px">
+            </td>
+            <td style="padding:15px;width:75%;vertical-align:middle">
+              <a href="http://proceedings.mlr.press/v70/molchanov17a.html">
+                <papertitle>Variational Dropout Sparsifies Deep Neural Networks</papertitle>
+              </a>
+              <br>
+              <a href="https://scholar.google.com/citations?user=tJ6JXRYAAAAJ&hl=en">Dmitry Molchanov*</a>,
+              <strong>Arsenii Ashukha*</strong>,
+              <a href="https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en">Dmitry Vetrov</a>
+              <br>
+                <em>ICML</em>, 2017  
+              <br>
+                <a href="https://iclr.cc/virtual_2020/poster_BJxI5gHKDr.html">icml talk (15 mins)</a> /  
+                <a href="https://arxiv.org/abs/1701.05369">arXiv</a> / 
+                <a href="https://senya-ashukha.github.io/projects/svdo_icml17/paper.txt" target="_blank">bibtex</a> / 
+                <a href="https://github.com/bayesgroup/variational-dropout-sparsifies-dnn">code (Theano)</a> /
+                <a href="https://github.com/google-research/google-research/blob/master/state_of_sparsity/layers/variational_dropout/nn.py#L585" target="_blank">TF code by Google AI</a> / 
+                <a href="https://colab.research.google.com/github/bayesgroup/deepbayes-2019/blob/master/seminars/day6/SparseVD-solution.ipynb" target="_blank">Colab PyTorch</a>
+
+
+                
+              <p></p>
+              <p>
+              Variational dropout secretly trains highly sparsified deep neural networks, while a pattern of sparsity is learned jointly with weights during training.</p>
             </td>
           </tr> 
           </table>
+
+
 
 
 
