@@ -1,0 +1,6 @@
+@article{molchanov2020greedy,
+  title={Greedy Policy Search: A Simple Baseline for Learnable Test-Time Augmentation},
+  author={Molchanov, Dmitry and Lyzhov, Alexander and Molchanova, Yuliya and Ashukha, Arsenii and Vetrov, Dmitry},
+  journal={arXiv preprint arXiv:2002.09103},
+  year={2020}
+}
