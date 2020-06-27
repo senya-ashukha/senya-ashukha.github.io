@@ -1,0 +1,6 @@
+@article{atanov2018deep,
+  title={The deep weight prior},
+  author={Atanov, Andrei and Ashukha, Arsenii and Struminsky, Kirill and Vetrov, Dmitry and Welling, Max},
+  journal={arXiv preprint arXiv:1810.06943},
+  year={2018}
+}
