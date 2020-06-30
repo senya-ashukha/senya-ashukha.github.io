@@ -1,0 +1,6 @@
+@article{neklyudov2018variance,
+  title={Variance networks: When expectation does not meet your expectations},
+  author={Neklyudov, Kirill and Molchanov, Dmitry and Ashukha, Arsenii and Vetrov, Dmitry},
+  journal={arXiv preprint arXiv:1803.03764},
+  year={2018}
+}
