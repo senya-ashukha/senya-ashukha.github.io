@@ -11,6 +11,44 @@
     gtag('config', 'UA-167092781-1');
   </script>
 
+  <script type="text/javascript">
+   function visibility_on(id) {
+        var e = document.getElementById(id+"_text");
+        if(e.style.display == 'none')
+            e.style.display = 'block';
+        var e = document.getElementById(id+"_img");
+        if(e.style.display == 'none')
+            e.style.display = 'block';
+   }
+   function visibility_off(id) {
+        var e = document.getElementById(id+"_text");
+        if(e.style.display == 'block')
+            e.style.display = 'none';
+        var e = document.getElementById(id+"_img");
+        if(e.style.display == 'block')
+            e.style.display = 'none';
+   }
+   function toggle_visibility(id) {
+       var e = document.getElementById(id+"_text");
+       if(e.style.display == 'inline')
+          e.style.display = 'block';
+       else
+          e.style.display = 'inline';
+       var e = document.getElementById(id+"_img");
+       if(e.style.display == 'inline')
+          e.style.display = 'block';
+       else
+          e.style.display = 'inline';
+   }
+   function toggle_vis(id) {
+       var e = document.getElementById(id);
+       if (e.style.display == 'none')
+           e.style.display = 'inline';
+       else
+           e.style.display = 'none';
+   }
+</script>
+
 
   <title>Senya Ashukha</title>
   
@@ -167,6 +205,33 @@
             </td>
           </tr> 
 
+            <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
+            <td style="padding:15px;width:25%;vertical-align:middle">
+                <img src='projects/sbp_neurips17/sbp.png' width="160px">
+            </td>
+            <td style="padding:15px;width:75%;vertical-align:middle">
+              <a href="http://papers.nips.cc/paper/7254-structured-bayesian-pruning-via-log-normal-multiplicative-noise">
+                <papertitle>Structured Bayesian Pruning via Log-Normal Multiplicative Noise</papertitle>
+              </a>
+              <br>
+              <a href="https://scholar.google.ru/citations?user=eOttYWgAAAAJ&hl=en">Kirill Neklyudov</a>,
+              <a href="https://scholar.google.com/citations?user=tJ6JXRYAAAAJ&hl=en">Dmitry Molchanov</a>,
+              <strong>Arsenii Ashukha</strong>,
+              <a href="https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en">Dmitry Vetrov</a>
+              <br>
+                <em>NeurIPS</em>, 2017  
+              <br>
+               <a href="https://github.com/necludov/group-sparsity-sbp">code</a> / 
+                <a href="https://arxiv.org/abs/1705.07283">arXiv</a> / 
+                <a href="https://senya-ashukha.github.io/projects/sbp_neurips17/paper.txt" target="_blank">bibtex</a> / 
+                <a href="https://bayesgroup.github.io/pdf/sbp-poster.pdf">poster</a> 
+              <p></p>
+              <p>
+              The model allows to sparsify a DNN with an arbitrary pattern of spasticity e.g., neurons or convolutional filters. 
+              
+            </td>
+          </tr> 
+
           <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
             <td style="padding:15px;width:25%;vertical-align:middle">
                 <img src='projects/svdo_icml17/svdo_prev.png' width="160px">
@@ -182,12 +247,22 @@
               <br>
                 <em>ICML</em>, 2017  
               <br>
-                <a href="https://iclr.cc/virtual_2020/poster_BJxI5gHKDr.html">icml talk (15 mins)</a> /  
+                <a href="https://iclr.cc/virtual_2020/poster_BJxI5gHKDr.html">talk (15 mins)</a> /  
                 <a href="https://arxiv.org/abs/1701.05369">arXiv</a> / 
                 <a href="https://senya-ashukha.github.io/projects/svdo_icml17/paper.txt" target="_blank">bibtex</a> / 
-                <a href="https://github.com/bayesgroup/variational-dropout-sparsifies-dnn">code (Theano)</a> /
-                <a href="https://github.com/google-research/google-research/tree/master/state_of_sparsity/layers/variational_dropout" target="_blank">TF code by Google AI</a> / 
-                <a href="https://colab.research.google.com/github/bayesgroup/deepbayes-2019/blob/master/seminars/day6/SparseVD-solution.ipynb" target="_blank">Colab PyTorch</a>
+                code (<a href="https://github.com/bayesgroup/variational-dropout-sparsifies-dnn">Theano</a>,
+                <a href="https://github.com/google-research/google-research/tree/master/state_of_sparsity/layers/variational_dropout" target="_blank">TF by GoogleAI</a>,
+                <a href="https://colab.research.google.com/github/bayesgroup/deepbayes-2019/blob/master/seminars/day6/SparseVD-solution.ipynb" target="_blank">Colab PyTorch</a>) /
+                 <a href="javascript:toggle_vis('contact2')"  style="color:gray"><b>retrospective</b></a>
+                  <div id="contact2" style="display: none;"> 
+                    <br>
+                    <br>
+                    <b>Retrospective</b>: 
+                    <i>i)</i> SparsesVD indeed works. I have about quite a few practical use cases. However, careful usage of pruning often <a href="https://arxiv.org/abs/1902.09574 ">can produce</a> better results. 
+                    <i>ii)</i> Training of deep models with noise is known to be hard and unstable. That is less the case with SparseVD. All variances, by a happy coincidence, have been initialized with small values and did not change much during training. Using small constant variances does not hurt the performance, so SparseVD might be considered as a fancy regulariser with no noise. 
+                    <i>iii)</i> The sparse solution is just a local optimum, as better values of ELBO <a href="https://openreview.net/forum?id=B1GAUs0cKQ">can be achieved</a> with a <ins>less</ins> flexible variational posterior q(w_ij)=N(w_ij | 0, σ_ij).
+                   </p>
+                  </div>
               <p></p>
               <p>
               Variational dropout secretly trains highly sparsified deep neural networks, while a pattern of sparsity is learned jointly with weights during training.</p>
