@@ -258,7 +258,7 @@
                     <br>
                     <br>
                     <b>Retrospective</b>: 
-                    <i>i)</i> SparsesVD indeed works. I have about quite a few practical use cases. However, careful usage of pruning often <a href="https://arxiv.org/abs/1902.09574 ">can produce</a> better results. 
+                    <i>i)</i> SparsesVD indeed works. I have heard quite at least several practical use cases by leading IT-giants. However, careful usage of pruning often <a href="https://arxiv.org/abs/1902.09574 ">can produce</a> better results. 
                     <i>ii)</i> Training of deep models with noise is known to be hard and unstable. That is less the case with SparseVD. All variances, by a happy coincidence, have been initialized with small values and did not change much during training. Using small constant variances does not hurt the performance, so SparseVD might be considered as a fancy regulariser with no noise. 
                     <i>iii)</i> The sparse solution is just a local optimum, as better values of ELBO <a href="https://openreview.net/forum?id=B1GAUs0cKQ">can be achieved</a> with a <ins>less</ins> flexible variational posterior q(w_ij)=N(w_ij | 0, σ_ij).
                    </p>
