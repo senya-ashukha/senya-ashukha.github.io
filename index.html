@@ -84,15 +84,14 @@
             </td>
           </tr>
         </tbody></table>
-
+        
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>Research</heading>
               <p>
-                I'm interested in core deep learning, probabilistic inference, uncertainty estimation, and learning with limited data. 
-                My works have been focused on understanding and applications of ensemble techniques and variational inference in deep neural networks. 
-<!--                 Representative papers are <span class="highlight">highlighted</span>. -->
+                My works are focused on understanding and applications of ensemble techniques and variational inference in deep neural networks. 
+                Representative papers are marked by <span style="background-color:Orange"> orange</span>.
               </p>
             </td>
           </tr>
@@ -100,6 +99,75 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+
+          <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
+            <td style="padding:15px;width:25%;vertical-align:middle">
+                <img src='projects/svdo_icml17/svdo_prev.png' width="160px">
+            </td>
+            <td style="padding:15px;width:75%;vertical-align:middle" bgcolor="#ffffff">
+              <a href="http://proceedings.mlr.press/v70/molchanov17a.html">
+                <papertitle>🍊Variational Dropout Sparsifies Deep Neural Networks</papertitle>
+              </a>
+              <br>
+              <a href="https://scholar.google.com/citations?user=tJ6JXRYAAAAJ&hl=en">Dmitry Molchanov*</a>,
+              <strong>Arsenii Ashukha*</strong>,
+              <a href="https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en">Dmitry Vetrov</a>
+              <br>
+                <em>ICML</em>, 2017  
+              <br>
+               <a href="javascript:toggle_vis('contact2')"  style="color:gray"><b>retrospective⏳</b></a> /
+                <a href="https://iclr.cc/virtual_2020/poster_BJxI5gHKDr.html">talk (15 mins)</a> /  
+                <a href="https://arxiv.org/abs/1701.05369">arXiv</a> / 
+                <a href="https://senya-ashukha.github.io/projects/svdo_icml17/paper.txt" target="_blank">bibtex</a> / 
+                code (<a href="https://github.com/bayesgroup/variational-dropout-sparsifies-dnn">theano</a>,
+                <a href="https://github.com/google-research/google-research/tree/master/state_of_sparsity/layers/variational_dropout" target="_blank">tf by GoogleAI</a>,
+                <a href="https://colab.research.google.com/github/bayesgroup/deepbayes-2019/blob/master/seminars/day6/SparseVD-solution.ipynb" target="_blank">colab pytorch</a>)
+                  <div id="contact2" style="display: none;"> 
+                    <br>
+                    <br>
+                    <b>Retrospective</b>: 
+                    <i>i)</i> SparsesVD indeed works, and I even heard about several practical use cases in leading IT companies! However, careful usage of pruning often <a href="https://arxiv.org/abs/1902.09574">can produce</a> better results. 
+                    <i>ii)</i> Training of deep models with noise is known to be hard and unstable. That is less the case with SparseVD. All variances, by a happy coincidence, have been initialized with small values and did not change much during training. Using small constant variances does not hurt the performance, so SparseVD might be considered as a fancy regulariser with (almost) no noise. 
+                    <i>iii)</i> The sparse solution is just a local optimum, as better values of ELBO <a href="https://openreview.net/forum?id=B1GAUs0cKQ">can be achieved</a> with a <ins>less</ins> flexible variational posterior q(w_ij)=N(w_ij | 0, σ_ij).
+                   </p>
+                  </div>
+              <p></p>
+              <p>
+              Variational dropout secretly trains highly sparsified deep neural networks, while a pattern of sparsity is learned jointly with weights during training.</p>
+            </td>
+          </tr>
+          <tr>
+             <td>   </td>
+          </tr>
+          <tr>
+             <td>   </td>
+          </tr>
+          <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
+            <td style="padding:15px;width:25%;vertical-align:middle">
+                <img src='projects/pitfalls_unc_ens_iclr20/pic.png' width="160px">
+            </td>
+            <td style="padding:15px;width:75%;vertical-align:middle" bgcolor="#ffffff">
+              <a href="https://openreview.net/forum?id=BJxI5gHKDr">
+                <papertitle>🍊Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning </papertitle>
+              </a>
+              <br>
+              <strong>Arsenii Ashukha*</strong>,
+              <a href="https://scholar.google.ru/citations?user=5LXTi40AAAAJ&hl=en">Alexander Lyzhov*</a>,
+              <a href="https://scholar.google.com/citations?user=tJ6JXRYAAAAJ&hl=en">Dmitry Molchanov*</a>,
+              <a href="https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en">Dmitry Vetrov</a>
+              <br>
+                <em>ICLR</em>, 2020  
+              <br>
+              <a href="https://senya-ashukha.github.io/pitfalls-uncertainty&ensembling">blog post</a> / 
+                <a href="https://iclr.cc/virtual_2020/poster_BJxI5gHKDr.html">poster video (5mins)</a> / 
+                <a href="https://github.com/bayesgroup/pytorch-ensembles">code</a> / 
+                <a href="https://arxiv.org/abs/2002.06470">arXiv</a> / 
+                <a href="https://senya-ashukha.github.io/projects/pitfalls_unc_ens_iclr20/paper.txt" target="_blank">bibtex</a>
+              <p></p>
+              <p>
+            The work introduces <i>calibrated log-likelihood</i> a reliable uncertainty estimation metric, <i>deep ensemble equivalent</i> an interpretable technique for comparison of ensembles, and points out that <i>test-time augmentation</i>  is a simple technique that allows to improve ensembles for free.</p>  
+            </td>
+          </tr> 
 
           <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
             <td style="padding:10px;width:25%;vertical-align:middle">
@@ -128,34 +196,6 @@
             </td>
           </tr> 
 
-          <span class="highlight">
-          <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
-            <td style="padding:15px;width:25%;vertical-align:middle">
-                <img src='projects/pitfalls_unc_ens_iclr20/pic.png' width="160px">
-            </td>
-            <td style="padding:15px;width:75%;vertical-align:middle">
-              <a href="https://openreview.net/forum?id=BJxI5gHKDr">
-                <papertitle>Pitfalls of In-Domain Uncertainty Estimation and Ensembling in Deep Learning</papertitle>
-              </a>
-              <br>
-              <strong>Arsenii Ashukha*</strong>,
-              <a href="https://scholar.google.ru/citations?user=5LXTi40AAAAJ&hl=en">Alexander Lyzhov*</a>,
-              <a href="https://scholar.google.com/citations?user=tJ6JXRYAAAAJ&hl=en">Dmitry Molchanov*</a>,
-              <a href="https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en">Dmitry Vetrov</a>
-              <br>
-                <em>ICLR</em>, 2020  
-              <br>
-              <a href="https://senya-ashukha.github.io/pitfalls-uncertainty&ensembling">blog post</a> / 
-                <a href="https://iclr.cc/virtual_2020/poster_BJxI5gHKDr.html">poster video (5mins)</a> / 
-                <a href="https://github.com/bayesgroup/pytorch-ensembles">code</a> / 
-                <a href="https://arxiv.org/abs/2002.06470">arXiv</a> / 
-                <a href="https://senya-ashukha.github.io/projects/pitfalls_unc_ens_iclr20/paper.txt" target="_blank">bibtex</a>
-              <p></p>
-              <p>
-            The work introduces <i>calibrated log-likelihood</i> a reliable uncertainty estimation metric, <i>deep ensemble equivalent</i> an interpretable technique for comparison of ensembles, and points out that <i>test-time augmentation</i>  is a simple technique that allows to improve ensembles for free.</p>  
-            </td>
-          </tr> 
-          </span>
 
           <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
             <td style="padding:15px;width:25%;vertical-align:middle">
@@ -258,43 +298,7 @@
               
             </td>
           </tr> 
-
-          <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
-            <td style="padding:15px;width:25%;vertical-align:middle">
-                <img src='projects/svdo_icml17/svdo_prev.png' width="160px">
-            </td>
-            <td style="padding:15px;width:75%;vertical-align:middle">
-              <a href="http://proceedings.mlr.press/v70/molchanov17a.html">
-                <papertitle>Variational Dropout Sparsifies Deep Neural Networks</papertitle>
-              </a>
-              <br>
-              <a href="https://scholar.google.com/citations?user=tJ6JXRYAAAAJ&hl=en">Dmitry Molchanov*</a>,
-              <strong>Arsenii Ashukha*</strong>,
-              <a href="https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en">Dmitry Vetrov</a>
-              <br>
-                <em>ICML</em>, 2017  
-              <br>
-               <a href="javascript:toggle_vis('contact2')"  style="color:gray"><b>retrospective⏳</b></a> /
-                <a href="https://iclr.cc/virtual_2020/poster_BJxI5gHKDr.html">talk (15 mins)</a> /  
-                <a href="https://arxiv.org/abs/1701.05369">arXiv</a> / 
-                <a href="https://senya-ashukha.github.io/projects/svdo_icml17/paper.txt" target="_blank">bibtex</a> / 
-                code (<a href="https://github.com/bayesgroup/variational-dropout-sparsifies-dnn">theano</a>,
-                <a href="https://github.com/google-research/google-research/tree/master/state_of_sparsity/layers/variational_dropout" target="_blank">tf by GoogleAI</a>,
-                <a href="https://colab.research.google.com/github/bayesgroup/deepbayes-2019/blob/master/seminars/day6/SparseVD-solution.ipynb" target="_blank">colab pytorch</a>)
-                  <div id="contact2" style="display: none;"> 
-                    <br>
-                    <br>
-                    <b>Retrospective</b>: 
-                    <i>i)</i> SparsesVD indeed works, and I even heard about several practical use cases in leading IT companies! However, careful usage of pruning often <a href="https://arxiv.org/abs/1902.09574">can produce</a> better results. 
-                    <i>ii)</i> Training of deep models with noise is known to be hard and unstable. That is less the case with SparseVD. All variances, by a happy coincidence, have been initialized with small values and did not change much during training. Using small constant variances does not hurt the performance, so SparseVD might be considered as a fancy regulariser with (almost) no noise. 
-                    <i>iii)</i> The sparse solution is just a local optimum, as better values of ELBO <a href="https://openreview.net/forum?id=B1GAUs0cKQ">can be achieved</a> with a <ins>less</ins> flexible variational posterior q(w_ij)=N(w_ij | 0, σ_ij).
-                   </p>
-                  </div>
-              <p></p>
-              <p>
-              Variational dropout secretly trains highly sparsified deep neural networks, while a pattern of sparsity is learned jointly with weights during training.</p>
-            </td>
-          </tr> 
+ 
           </table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
