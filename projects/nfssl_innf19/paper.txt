@@ -1,0 +1,6 @@
+@article{atanov2019semi,
+  title={Semi-conditional normalizing flows for semi-supervised learning},
+  author={Atanov, Andrei and Volokhova, Alexandra and Ashukha, Arsenii and Sosnovik, Ivan and Vetrov, Dmitry},
+  journal={arXiv preprint arXiv:1905.00505},
+  year={2019}
+}
