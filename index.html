@@ -1,54 +1,5 @@
 <!DOCTYPE HTML>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- Hi, Senya is Here. Please DELETE the two <script> tags below if you use this HTML, otherwise my analytics will track your page -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167092781-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-167092781-1');
-  </script>
-
-  <script type="text/javascript">
-   function visibility_on(id) {
-        var e = document.getElementById(id+"_text");
-        if(e.style.display == 'none')
-            e.style.display = 'block';
-        var e = document.getElementById(id+"_img");
-        if(e.style.display == 'none')
-            e.style.display = 'block';
-   }
-   function visibility_off(id) {
-        var e = document.getElementById(id+"_text");
-        if(e.style.display == 'block')
-            e.style.display = 'none';
-        var e = document.getElementById(id+"_img");
-        if(e.style.display == 'block')
-            e.style.display = 'none';
-   }
-   function toggle_visibility(id) {
-       var e = document.getElementById(id+"_text");
-       if(e.style.display == 'inline')
-          e.style.display = 'block';
-       else
-          e.style.display = 'inline';
-       var e = document.getElementById(id+"_img");
-       if(e.style.display == 'inline')
-          e.style.display = 'block';
-       else
-          e.style.display = 'inline';
-   }
-   function toggle_vis(id) {
-       var e = document.getElementById(id);
-       if (e.style.display == 'none')
-           e.style.display = 'inline';
-       else
-           e.style.display = 'none';
-   }
-</script>
-
 
   <title>Senya Ashukha</title>
   
@@ -57,6 +8,28 @@
   
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
+
+  <style>
+    .collapsible-content {
+      display: none; /* Hidden by default */
+    }
+    .toggle-button {
+      background-color: rgba(240, 240, 240, 0.8); /* MODIFIED: Made background transparent */
+      border: 1px solid #ccc;
+      border-radius: 8px; /* ADDED: Rounds the corners */
+      padding: 8px 16px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      font-size: 1em;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      transition: background-color 0.3s; /* ADDED: Smooth transition for hover */
+    }
+    .toggle-button:hover {
+      background-color: rgba(224, 224, 224, 0.95); /* MODIFIED: Adjusted hover color */
+    }
+  </style>
 </head>
 
 <body>
@@ -84,7 +57,7 @@
                 <a href="mailto:ars.ashuha@gmail.com" target="_blank">Email</a> &nbsp/&nbsp
                 <a href="https://senya-ashukha.github.io/arsenii-ashukha-cv.pdf">CV</a> &nbsp/&nbsp
                 <a href="https://scholar.google.com/citations?user=IU-kuP8AAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://github.com/senya-ashukha">GitHub</a> &nbsp/&nbsp
+                <a href="https://github.com/senya-ashuha">GitHub</a> &nbsp/&nbsp
                 <a href="https://twitter.com/senya_ashuha">Twitter</a> / 📍London (UK)
               </p>
             </td>
@@ -106,7 +79,7 @@
               </a>
               <br>
              <a href="https://scholar.google.com/citations?user=HvVrLNwAAAAJ&hl=en">Roman Suvorov</a>, <a href="https://scholar.google.com/citations?hl=en&user=pf5LuKkAAAAJ">Elizaveta Logacheva</a>, <a href="https://www.kaggle.com/heyt0ny">Anton Mashikhin</a>, <a href="https://ru.linkedin.com/in/aremizova"> Anastasia Remizova</a>, 
-             <strong>Arsenii Ashukha</strong>, <a href="https://dblp.org/pid/261/3035.html">Aleksei Silvestrov</a>, <a href="https://kr.linkedin.com/in/naejin-kong-654a58ba">Naejin Kong</a>, <a href="https://in.linkedin.com/in/harshithgoka">Harshith Goka</a>, <a href="https://kr.linkedin.com/in/kiwoong-park-67b02218">Kiwoong Park</a>, <a href="https://scholar.google.com/citations?user=gYYVokYAAAAJ&hl=en">Victor Lempitsky</a>
+              <strong>Arsenii Ashukha</strong>, <a href="https://dblp.org/pid/261/3035.html">Aleksei Silvestrov</a>, <a href="https://kr.linkedin.com/in/naejin-kong-654a58ba">Naejin Kong</a>, <a href="https://in.linkedin.com/in/harshithgoka">Harshith Goka</a>, <a href="https://kr.linkedin.com/in/kiwoong-park-67b02218">Kiwoong Park</a>, <a href="https://scholar.google.com/citations?user=gYYVokYAAAAJ&hl=en">Victor Lempitsky</a>
               <br>
                 <em>WACV</em>, 2022  
               <br>
@@ -136,7 +109,7 @@
               <br>
                 <em>ICML</em>, 2017  
               <br>
-               <a href="javascript:toggle_vis('contact2')"  style="color:gray"><b>retrospective⏳</b></a> /
+               <a href="javascript:void(0)" onclick="var e = document.getElementById('contact2'); e.style.display = (e.style.display == 'block' ? 'none' : 'block');" style="color:gray"><b>retrospective⏳</b></a> /
                 <a href="https://iclr.cc/virtual_2020/poster_BJxI5gHKDr.html">talk (15 mins)</a> /  
                 <a href="https://arxiv.org/abs/1701.05369">arXiv</a> / 
                 <a href="https://senya-ashukha.github.io/projects/svdo_icml17/paper.txt" target="_blank">bibtex</a> / 
@@ -148,9 +121,9 @@
                     <br>
                     <b>Retrospective</b>: 
                     <ul>
-                    <li></i> SparsesVD works in practice and it was used for network sparsification in leading IT companies. However, future studies showed that careful usage of pruning-based methods <a href="https://arxiv.org/abs/1902.09574">can produce</a> better results. </li>
-                    <li></i> Training of deep models with noise is known to be hard and unstable. That is less the case with SparseVD. All variances are initialized with small values and did not change much during training. Using small variances does not hurt the performance, thus SparseVD might be considered as a fancy regulariser with (almost) no noise. </li>
-                    <li></i> The sparse solution is just a local optimum, as better values of ELBO <a href="https://openreview.net/forum?id=B1GAUs0cKQ">can be achieved</a> with a <ins>less</ins> flexible variational posterior q(w_ij)=N(w_ij | 0, σ_ij).</li>
+                    <li> SparsesVD works in practice and it was used for network sparsification in leading IT companies. However, future studies showed that careful usage of pruning-based methods <a href="https://arxiv.org/abs/1902.09574">can produce</a> better results. </li>
+                    <li> Training of deep models with noise is known to be hard and unstable. That is less the case with SparseVD. All variances are initialized with small values and did not change much during training. Using small variances does not hurt the performance, thus SparseVD might be considered as a fancy regulariser with (almost) no noise. </li>
+                    <li> The sparse solution is just a local optimum, as better values of ELBO <a href="https://openreview.net/forum?id=B1GAUs0cKQ">can be achieved</a> with a <ins>less</ins> flexible variational posterior q(w_ij)=N(w_ij | 0, σ_ij).</li>
                    </ul>
                       </p>
                   </div>
@@ -159,6 +132,17 @@
               We show that variational dropout trains highly sparsified deep neural networks, while a pattern of sparsity is learned jointly with weights during training.</p>
             </td>
           </tr> 
+
+          <tr>
+            <td colspan="2" style="padding: 0;">
+                <button type="button" class="toggle-button" id="toggleOlderProjects">
+                  More projects ...
+                </button>
+            </td>
+          </tr>
+        </tbody>
+        
+        <tbody class="collapsible-content" id="olderProjects">
           <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
             <td style="padding:15px;width:25%;vertical-align:middle">
                 <img src='projects/pitfalls_unc_ens_iclr20/pic.png' width="160px">
@@ -185,7 +169,7 @@
             The work shows that i) a simple ensemble of independently trained networks performs significantly better than recent techniques ii) a simple test-time augmentation applied to a conventional network outperforms low-parameters ensembles (e.g. Dropout) and also improves all ensembles for free iii) a comparison of the uncertainty estimation ability of algorithms is often done incorrectly in the literature. </p>  
             </td>
           </tr> 
-<tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
+          <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
             <td style="padding:10px;width:25%;vertical-align:middle">
                 <img src='projects/gps_uai20/gps.png' width="170px">
             </td>
@@ -208,10 +192,10 @@
                 <a href="https://senya-ashukha.github.io/projects/gps_uai20/paper.txt" target="_blank">bibtex</a>
               <p></p>
               <p>
-            We introduce greedy policy search (GPS), a simple but high-performing method for learning a policy of test-time augmentation.   
-            </td>
-          </tr>
-          <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
+            We introduce greedy policy search (GPS), a simple but high-performing method for learning a policy of test-time augmentation.    
+              </td>
+            </tr>
+            <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
             <td style="padding:15px;width:25%;vertical-align:middle">
                 <img src='projects/dwp_iclr19/dwp.png' width="160px">
             </td>
@@ -233,7 +217,7 @@
                 <a href="https://senya-ashukha.github.io/projects/dwp_iclr19/paper.txt" target="_blank">bibtex</a> 
               <p></p>
               <p>
-              The <i>deep weight prior</i> is the generative model for kernels of convolutional neural networks, that acts as a prior distribution while training on new datasets.</p>
+                The <i>deep weight prior</i> is the generative model for kernels of convolutional neural networks, that acts as a prior distribution while training on new datasets.</p>
             </td>
           </tr> 
 
@@ -258,7 +242,7 @@
                 <a href="https://senya-ashukha.github.io/projects/vn-iclr19/paper.txt" target="_blank">bibtex</a> 
               <p></p>
               <p>
-              It is possible to learn a zero-centered Gaussian distribution over the weights of a neural network by learning only variances, and it works surprisingly well.</p>
+                It is possible to learn a zero-centered Gaussian distribution over the weights of a neural network by learning only variances, and it works surprisingly well.</p>
             </td>
           </tr> 
           <tr onmouseout="nerf_stop()" onmouseover="nerf_start()"  bgcolor="#ffffff">
@@ -270,7 +254,7 @@
                 <papertitle>Semi-Conditional Normalizing Flows for Semi-Supervised Learning</papertitle>
               </a>
               <br>
-              <a href="https://scholar.google.com/citations?user=XriU_R8AAAAJ&hl=en">Andrei Atanov</a>,              
+              <a href="https://scholar.google.com/citations?user=XriU_R8AAAAJ&hl=en">Andrei Atanov</a>,        
               <a href="https://alexandravolokhova.github.io/">Alexandra Volokhova</a>,
               <strong>Arsenii Ashukha</strong>,
               <a href="https://isosnovik.xyz/">Ivan Sosnovik</a>,
@@ -295,7 +279,7 @@
                 <papertitle>Unsupervised Domain Adaptation with SharedLatent Dynamics for Reinforcement Learning</papertitle>
               </a>
               <br>
-              <a href="https://scholar.google.com/citations?user=XriU_R8AAAAJ&hl=en">Evgenii Nikishin</a>,              
+              <a href="https://scholar.google.com/citations?user=XriU_R8AAAAJ&hl=en">Evgenii Nikishin</a>,        
               <strong>Arsenii Ashukha</strong>,
               <a href="https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en">Dmitry Vetrov</a>
               <br>
@@ -357,26 +341,21 @@
               
             </td>
           </tr>
-          </table>
-        </div>
+        </tbody> </table>
 
         <p style="text-align:right;"> <font size="2">* denotes joint first co-authorship.</font></p>
   
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
-            <heading>Code</heading>
+            <heading>Open source implementations</heading>
             <td style="padding:20px;width:100%;vertical-align:middle">
               <p align="left">
-              Check out very short and simple and fan to make implementations of ML algorithms:
                 <ul>
+                <li><a href="https://github.com/advimman/lama">LaMa Inpainting</a></li>
                 <li><a href="https://github.com/senya-ashukha/simple-gradient-boosting">Gradient Boosting</a></li>
                 <li><a href="https://github.com/senya-ashukha/real-nvp-pytorch">Real NVP</a></li>
                 <li><a href="https://github.com/senya-ashukha/quantile-regression-dqn-pytorch">Quantile Regression DQN (Distributional RL)</a></li>
                 <li><a href="https://github.com/senya-ashukha/simple-equivariant-gnn">Equivariant GNN</a></li>
-              </ul>
-              <br>
-              Also, chek out more solid implementations (at least they can do ImageNet):
-              <ul>
                 <li><a href="https://github.com/AndrewAtanov/simclr-pytorch">Multi-gpu SimCLRv1</a></li>
                 <li><a href="https://github.com/bayesgroup/pytorch-ensembles">Ensembles (Deep ensembles, Snapshot ensembles, cSGLD, FGE, etc.)</li>
               <ul>
@@ -398,6 +377,20 @@
       </td>
     </tr>
   </table>
+
+  <script>
+    document.getElementById('toggleOlderProjects').addEventListener('click', function() {
+      var content = document.getElementById('olderProjects');
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row-group'; // Use 'table-row-group' for tbody
+        this.textContent = 'Hide The Full Project List...';
+      } else {
+        content.style.display = 'none';
+        this.textContent = 'More Projects...';
+      }
+    });
+  </script>
+
 </body>
 
 </html>
