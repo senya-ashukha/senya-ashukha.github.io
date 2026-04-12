@@ -89,7 +89,7 @@ header {
   }
   
   header {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     text-align: center;
     margin-top: 0;
