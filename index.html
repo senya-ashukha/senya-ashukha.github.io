@@ -15,6 +15,28 @@
 </head>
 
 <body>
+  <nav class="sticky-nav" id="stickyNav">
+    <div class="sticky-nav-content">
+      <a href="#" class="sticky-name">Arsenii Ashukha</a>
+      <div class="links sticky-links">
+        <a href="mailto:ars.ashuha@gmail.com" target="_blank">Email</a>
+        <a href="arsenii-ashukha-cv.pdf">CV</a>
+        <a href="https://scholar.google.com/citations?user=IU-kuP8AAAAJ&hl=en">Scholar</a>
+        <a href="https://github.com/senya-ashukha">GitHub</a>
+        <a href="https://twitter.com/senya_ashuha">Twitter</a>
+        <span class="sticky-location">📍London</span>
+      </div>
+    </div>
+  </nav>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    🌓
+  </button>
+
+  <button class="jump-up" id="jumpUp" aria-label="Jump to top">
+    ↑
+  </button>
+
   <div class="banner-container">
     <img class="banner-img" src="images/Iso_Wallpaper_Blocks_06.jpg" alt="Banner">
   </div>
@@ -26,8 +48,9 @@
           <h1 class="name">Arsenii Ashukha</h1>
           <p>
             I am a Senior Research Scientist at <a href="https://www.isomorphiclabs.com/">Isomorphic Labs</a>, 
-            an Alphabet subsidiary led by Demis Hassabis, where I work on deep learning models for interaction
-            of drug and protein molecules. Previously I was a Research Scientist at Samsung and PhD student 
+            an Alphabet subsidiary that aims to solve all disease, led by Demis Hassabis and Max Jaderberg. 
+            I work on deep learning models for the interaction of drug and protein molecules. 
+            Prior to joining Isomorphic, I was a Research Scientist at Samsung and a PhD student 
             at the <a href="https://bayesgroup.ru/">Bayesian Methods Research Group</a> under the 
             supervision of <a href="https://bayesgroup.org/people/dmitry-vetrov/">Dmitry Vetrov</a>.
           </p>
@@ -53,14 +76,18 @@
       <section>
         <h2 class="section-title">Research</h2>
 
-        <article class="project-card">
-          <div class="project-image-container">
+        <article class="project-card" id="research">
+          <div class="project-image-container isodde-video-container">
             <video class="project-img" autoplay loop muted playsinline preload="metadata">
               <source src="https://storage.googleapis.com/isomorphiclabs-website-public-artifacts/videos/cryptic.mp4" type="video/mp4">
             </video>
+            <div class="isodde-overlay">View Project</div>
           </div>
           <div class="project-info">
-            <h3><a href="https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier">Accurate Predictions of Novel Biomolecular Interactions with IsoDDE</a></h3>
+            <div class="project-header">
+              <h3><a href="https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier">Accurate Predictions of Novel Biomolecular Interactions with IsoDDE</a></h3>
+              <span class="latest-badge">Latest News</span>
+            </div>
             <div class="project-authors">
               <strong>Isomorphic Labs Team</strong>
             </div>
@@ -473,13 +500,57 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            observer.unobserve(entry.target); // Optional: Stop observing once revealed
+            observer.unobserve(entry.target);
           }
         });
       }, observerOptions);
 
       const revealElements = document.querySelectorAll('.reveal');
       revealElements.forEach(el => observer.observe(el));
+
+      // Sticky Nav logic
+      const stickyNav = document.getElementById('stickyNav');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          stickyNav.classList.add('visible');
+        } else {
+          stickyNav.classList.remove('visible');
+        }
+      });
+
+      // Dark Mode Logic
+      const themeToggle = document.getElementById('themeToggle');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+      }
+
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
+        setTheme(currentTheme === 'light' ? 'dark' : 'light');
+      });
+
+      // Jump Up logic
+      const jumpUp = document.getElementById('jumpUp');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+          jumpUp.classList.add('visible');
+        } else {
+          jumpUp.classList.remove('visible');
+        }
+      });
+
+      jumpUp.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Initialize theme
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        setTheme(savedTheme);
+      }
     });
   </script>
 </body>
