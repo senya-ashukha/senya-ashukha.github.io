@@ -1,0 +1,8 @@
+@manual{isodde2026,
+  title = {Accurate Predictions of Novel Biomolecular Interactions with IsoDDE},
+  author = {Isomorphic Labs Team},
+  month = feb,
+  year = 2026,
+  doi = {10.5281/zenodo.18606681},
+  url = {https://doi.org/10.5281/zenodo.18606681},
+}
