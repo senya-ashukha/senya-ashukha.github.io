@@ -17,8 +17,8 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: #8ab4f8;
-    --primary-gradient: linear-gradient(135deg, #8ab4f8 0%, #81c995 100%);
+    --primary-color: #58a6ff;
+    --primary-gradient: linear-gradient(135deg, #58a6ff 0%, #7ee787 100%);
     --text-color: #e8eaed;
     --bg-color: #121212;
     --secondary-text: #9aa0a6;
@@ -30,8 +30,8 @@ html {
 }
 
 [data-theme='dark'] {
-  --primary-color: #8ab4f8;
-  --primary-gradient: linear-gradient(135deg, #8ab4f8 0%, #81c995 100%);
+  --primary-color: #58a6ff;
+  --primary-gradient: linear-gradient(135deg, #58a6ff 0%, #7ee787 100%);
   --text-color: #e8eaed;
   --bg-color: #121212;
   --secondary-text: #9aa0a6;
@@ -53,6 +53,16 @@ body {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+a:hover {
+  opacity: 0.8;
 }
 
 .container {
@@ -252,8 +262,8 @@ header {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -263,21 +273,29 @@ header {
   align-items: center;
   justify-content: center;
   z-index: 1001;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   transition: all 0.2s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.theme-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: var(--hover-shadow);
+@media (hover: hover) {
+  .theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--hover-shadow);
+  }
+}
+
+.theme-toggle:active {
+  transform: scale(0.9);
 }
 
 .jump-up {
   position: fixed;
   bottom: 6rem;
   right: 2rem;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -287,12 +305,14 @@ header {
   align-items: center;
   justify-content: center;
   z-index: 1001;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   pointer-events: none;
   color: var(--text-color);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .jump-up.visible {
@@ -300,12 +320,18 @@ header {
   pointer-events: auto;
 }
 
-.jump-up:hover {
-  transform: scale(1.1);
-  box-shadow: var(--hover-shadow);
-  background: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
+@media (hover: hover) {
+  .jump-up:hover {
+    transform: scale(1.1);
+    box-shadow: var(--hover-shadow);
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+  }
+}
+
+.jump-up:active {
+  transform: scale(0.9);
 }
 
 /* Project Hover Animations */
@@ -419,6 +445,30 @@ header {
 
 .project-info h3 a:hover {
   color: var(--primary-color);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: lowercase;
+  background: none;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+  background: none;
+  transform: none;
 }
 
 .project-authors {
