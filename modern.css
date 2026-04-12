@@ -69,7 +69,7 @@ header {
   position: relative;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   gap: 2rem;
   margin-bottom: 3rem;
   padding: 2rem;
